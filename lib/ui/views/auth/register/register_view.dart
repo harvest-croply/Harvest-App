@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:harvest_app/ui/views/auth/register/widgets/google_register_button.dart';
 import 'package:harvest_app/ui/views/auth/register/widgets/register_header.dart';
 import 'package:harvest_app/ui/views/auth/register/widgets/or_divider.dart';
-import 'package:harvest_app/ui/views/auth/register_email/widgets/register_header.dart';
 import 'package:harvest_app/ui/widgets/auth_footer.dart';
 import 'package:harvest_app/ui/widgets/action_button.dart';
 import 'package:harvest_app/ui/widgets/custom_app_bar.dart';
@@ -27,7 +26,7 @@ class RegisterView extends StackedView<RegisterViewModel> {
             children: [
               const CustomAppBar(),
               const RegisterHeader(),
-              const GoogleRegisterButton(),
+              GoogleRegisterButton(),
               const OrDivider(),
               ActionButton(
                 text: "Daftar Dengan Email",

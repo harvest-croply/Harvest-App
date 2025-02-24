@@ -4,10 +4,13 @@ import 'package:harvest_app/app/constants/custom_colors.dart';
 class CustomTextField extends StatelessWidget {
   final String text;
   final String placeHolder;
+  final String? note;
+
   const CustomTextField({
     super.key,
     required this.text,
     required this.placeHolder,
+    this.note,
   });
 
   @override
@@ -17,10 +20,11 @@ class CustomTextField extends StatelessWidget {
       children: [
         Text(
           text,
-          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: CustomColors.neutral50,
-                fontWeight: FontWeight.w500,
-              ),
+          style: TextStyle(
+            fontSize: 12,
+            color: CustomColors.neutral50,
+            fontWeight: FontWeight.w500,
+          ),
         ),
         const SizedBox(height: 4),
         SizedBox(
@@ -64,6 +68,20 @@ class CustomTextField extends StatelessWidget {
                 ),
           ),
         ),
+        if (note != null)
+          Column(
+            children: [
+              const SizedBox(height: 4),
+              Text(
+                note ?? "",
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                  color: CustomColors.neutral30,
+                ),
+              ),
+            ],
+          ),
         const SizedBox(height: 16),
       ],
     );

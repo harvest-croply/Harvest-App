@@ -6,6 +6,7 @@ import 'package:harvest_app/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:harvest_app/ui/views/auth/register_email/register_email_view.dart';
+import 'package:harvest_app/ui/views/create_farm/create_farm_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -14,6 +15,7 @@ import 'package:harvest_app/ui/views/auth/register_email/register_email_view.dar
     MaterialRoute(page: LoginView),
     MaterialRoute(page: RegisterView),
     MaterialRoute(page: RegisterEmailView),
+    MaterialRoute(page: CreateFarmView),
 // @stacked-route
   ],
   dependencies: [

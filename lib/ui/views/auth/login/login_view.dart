@@ -6,7 +6,6 @@ import 'package:harvest_app/ui/views/auth/login/widgets/login_header.dart';
 import 'package:harvest_app/ui/views/auth/register/widgets/google_register_button.dart';
 import 'package:harvest_app/ui/views/auth/register/widgets/or_divider.dart';
 import 'package:harvest_app/ui/widgets/action_button.dart';
-import 'package:harvest_app/ui/widgets/auth_footer.dart';
 import 'package:harvest_app/ui/widgets/custom_app_bar.dart';
 import 'package:harvest_app/ui/widgets/custom_text_field.dart';
 import 'package:stacked/stacked.dart';
@@ -30,7 +29,7 @@ class LoginView extends StackedView<LoginViewModel> {
                 const CustomAppBar(),
                 const LoginHeader(),
                 const SizedBox(height: 16),
-                const GoogleRegisterButton(),
+                GoogleRegisterButton(),
                 const OrDivider(),
                 const SizedBox(height: 16),
                 const CustomTextField(
