@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:harvest_app/app/app.locator.dart';
+import 'package:harvest_app/app/app.router.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/assets/assets_icons.dart';
 import 'package:harvest_app/ui/widgets/search_bar.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class CreateFarmMapSelector extends StatefulWidget {
   const CreateFarmMapSelector({super.key});
@@ -12,6 +15,8 @@ class CreateFarmMapSelector extends StatefulWidget {
 }
 
 class _CreateFarmMapSelectorState extends State<CreateFarmMapSelector> {
+  final _navigationService = locator<NavigationService>();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +39,11 @@ class _CreateFarmMapSelectorState extends State<CreateFarmMapSelector> {
             height: 120,
           ),
           const SizedBox(height: 16),
-          const CustomSearchBar(),
+          CustomSearchBar(
+            onTap: () {
+              _navigationService.navigateToSearchFarmView();
+            },
+          ),
           const SizedBox(height: 16),
           const SizedBox(height: 12),
           Row(

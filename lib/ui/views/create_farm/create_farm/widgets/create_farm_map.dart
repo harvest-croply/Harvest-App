@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/assets/assets_images.dart';
-import 'package:harvest_app/ui/views/create_farm/widgets/create_farm_map_selector.dart';
+import 'package:harvest_app/ui/views/create_farm/create_farm/widgets/create_farm_map_selector.dart';
 
 class CreateFarmMap extends StatefulWidget {
   const CreateFarmMap({super.key});

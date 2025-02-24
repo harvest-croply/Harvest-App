@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:harvest_app/ui/views/create_farm/widgets/create_farm_form.dart';
-import 'package:harvest_app/ui/views/create_farm/widgets/create_farm_header.dart';
-import 'package:harvest_app/ui/views/create_farm/widgets/create_farm_map.dart';
+import 'package:harvest_app/ui/views/create_farm/create_farm/widgets/create_farm_form.dart';
+import 'package:harvest_app/ui/views/create_farm/create_farm/widgets/create_farm_header.dart';
+import 'package:harvest_app/ui/views/create_farm/create_farm/widgets/create_farm_map.dart';
 import 'package:harvest_app/ui/widgets/action_button.dart';
 import 'package:stacked/stacked.dart';
 

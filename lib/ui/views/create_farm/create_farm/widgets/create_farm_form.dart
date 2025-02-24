@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:harvest_app/ui/views/create_farm/widgets/create_farm_tree_image.dart';
+import 'package:harvest_app/ui/views/create_farm/create_farm/widgets/create_farm_tree_image.dart';
 import 'package:harvest_app/ui/widgets/custom_text_field.dart';
 
 class CreateFarmForm extends StatelessWidget {

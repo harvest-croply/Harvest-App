@@ -25,6 +25,11 @@ class MainApp extends StatelessWidget {
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [StackedService.routeObserver],
       theme: buildTheme(Brightness.light),
+      scrollBehavior: ScrollConfiguration.of(context).copyWith(
+        physics: const BouncingScrollPhysics(
+          parent: AlwaysScrollableScrollPhysics(),
+        ),
+      ),
     );
   }
 }
