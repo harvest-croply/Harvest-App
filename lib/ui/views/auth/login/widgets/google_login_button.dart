@@ -24,7 +24,7 @@ class GoogleLoginButton extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             Text(
-              "Daftar dengan Google",
+              "Login dengan Google",
               style: Theme.of(context).textTheme.labelMedium,
             ),
           ],

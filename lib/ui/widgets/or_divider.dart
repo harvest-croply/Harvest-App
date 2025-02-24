@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 
-class LoginDivider extends StatelessWidget {
-  const LoginDivider({super.key});
+class OrDivider extends StatelessWidget {
+  const OrDivider({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:harvest_app/app/constants/custom_colors.dart';
 
 ThemeData buildTheme(brightness) {
   var baseTheme = ThemeData(
@@ -8,6 +9,9 @@ ThemeData buildTheme(brightness) {
   );
 
   return baseTheme.copyWith(
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: CustomColors.primeGreen30,
+    ),
     textTheme: GoogleFonts.interTextTheme(
       baseTheme.textTheme.copyWith(
         // Title 1
