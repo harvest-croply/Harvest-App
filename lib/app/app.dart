@@ -9,6 +9,7 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:harvest_app/ui/views/auth/register_email/register_email_view.dart';
 import 'package:harvest_app/ui/views/create_farm/search_farm/search_farm_view.dart';
 import 'package:harvest_app/ui/views/create_farm/create_farm/confirm_location/confirm_location_view.dart';
+import 'package:harvest_app/ui/views/dashboard/dashboard_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -20,6 +21,7 @@ import 'package:harvest_app/ui/views/create_farm/create_farm/confirm_location/co
     MaterialRoute(page: CreateFarmView),
     MaterialRoute(page: SearchFarmView),
     MaterialRoute(page: ConfirmLocationView),
+    MaterialRoute(page: DashboardView),
 // @stacked-route
   ],
   dependencies: [

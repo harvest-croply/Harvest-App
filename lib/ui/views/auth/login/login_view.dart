@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:harvest_app/app/app.locator.dart';
+import 'package:harvest_app/app/app.router.dart';
 import 'package:harvest_app/ui/views/auth/login/login_viewmodel.dart';
 import 'package:harvest_app/ui/views/auth/login/widgets/forget_password.dart';
 import 'package:harvest_app/ui/views/auth/login/widgets/login_footer.dart';
@@ -9,9 +11,11 @@ import 'package:harvest_app/ui/widgets/action_button.dart';
 import 'package:harvest_app/ui/widgets/custom_app_bar.dart';
 import 'package:harvest_app/ui/widgets/custom_text_field.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class LoginView extends StackedView<LoginViewModel> {
-  const LoginView({Key? key}) : super(key: key);
+  LoginView({Key? key}) : super(key: key);
+  final _navigationService = locator<NavigationService>();
 
   @override
   Widget builder(
@@ -43,7 +47,9 @@ class LoginView extends StackedView<LoginViewModel> {
                 const ForgetPassword(),
                 ActionButton(
                   text: "Login",
-                  onTap: () {},
+                  onTap: () {
+                    _navigationService.navigateToDashboardView();
+                  },
                 ),
                 LoginFooter(),
               ],

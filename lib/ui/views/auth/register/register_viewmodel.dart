@@ -7,6 +7,6 @@ class RegisterViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
   register() {
-    _navigationService.navigateToRegisterView();
+    _navigationService.navigateToRegisterEmailView();
   }
 }
