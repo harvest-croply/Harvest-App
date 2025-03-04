@@ -31,6 +31,8 @@ harvest_assets: &harvest_assets
   # icons
   - packages/harvest_app/assets/icons/map.svg
   - packages/harvest_app/assets/icons/map-pin.svg
+  - packages/harvest_app/assets/icons/search.svg
+  - packages/harvest_app/assets/icons/arrow-left.svg
 
 flutter:
   uses-material-design: true

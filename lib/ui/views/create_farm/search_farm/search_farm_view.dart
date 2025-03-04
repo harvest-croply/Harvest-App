@@ -43,7 +43,7 @@ class SearchFarmView extends StackedView<SearchFarmViewModel> {
                 shrinkWrap: true,
                 itemCount: 100,
                 itemBuilder: (BuildContext context, int int) {
-                  return const SearchAreaCard();
+                  return SearchAreaCard();
                 },
               )
             ],
