@@ -36,6 +36,9 @@ harvest_assets: &harvest_assets
   - packages/harvest_app/assets/icons/search.svg
   - packages/harvest_app/assets/icons/arrow-left.svg
   - packages/harvest_app/assets/icons/more.svg
+  - packages/harvest_app/assets/icons/edit.svg
+  - packages/harvest_app/assets/icons/delete.svg
+  - packages/harvest_app/assets/icons/close.svg
 
 flutter:
   uses-material-design: true

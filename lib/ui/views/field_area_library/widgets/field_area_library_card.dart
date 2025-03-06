@@ -5,7 +5,8 @@ import 'package:harvest_app/assets/assets_icons.dart';
 import 'package:harvest_app/assets/assets_images.dart';
 
 class FieldAreaLibraryCard extends StatelessWidget {
-  const FieldAreaLibraryCard({super.key});
+  final Function openBottomSheet;
+  const FieldAreaLibraryCard({super.key, required this.openBottomSheet});
 
   @override
   Widget build(BuildContext context) {
@@ -57,8 +58,13 @@ class FieldAreaLibraryCard extends StatelessWidget {
                       )
                     ],
                   ),
-                  SvgPicture.asset(
-                    AssetsIcons.more,
+                  GestureDetector(
+                    onTap: () {
+                      openBottomSheet();
+                    },
+                    child: SvgPicture.asset(
+                      AssetsIcons.more,
+                    ),
                   ),
                 ],
               ),

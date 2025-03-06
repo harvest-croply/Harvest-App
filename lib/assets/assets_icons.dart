@@ -7,4 +7,7 @@ class AssetsIcons {
   static const search = '$path/search.svg';
   static const arrowLeft = '$path/arrow-left.svg';
   static const more = '$path/more.svg';
+  static const edit = '$path/edit.svg';
+  static const delete = '$path/delete.svg';
+  static const close = '$path/close.svg';
 }

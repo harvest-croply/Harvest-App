@@ -39,7 +39,11 @@ class FieldAreaLibraryView extends StackedView<FieldAreaLibraryViewModel> {
                         shrinkWrap: true,
                         itemCount: 3,
                         itemBuilder: (context, index) {
-                          return const FieldAreaLibraryCard();
+                          return FieldAreaLibraryCard(
+                            openBottomSheet: () {
+                              viewModel.openEditDeleteBottomSheet();
+                            },
+                          );
                         },
                       ),
               ],
