@@ -4,12 +4,13 @@ import 'package:harvest_app/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-import 'notice_sheet_model.dart';
+import 'edit_delete_field_area_sheet_model.dart';
 
-class NoticeSheet extends StackedView<NoticeSheetModel> {
-  final Function(SheetResponse)? completer;
+class EditDeleteFieldAreaSheet
+    extends StackedView<EditDeleteFieldAreaSheetModel> {
+  final Function(SheetResponse response)? completer;
   final SheetRequest request;
-  const NoticeSheet({
+  const EditDeleteFieldAreaSheet({
     Key? key,
     required this.completer,
     required this.request,
@@ -18,7 +19,7 @@ class NoticeSheet extends StackedView<NoticeSheetModel> {
   @override
   Widget builder(
     BuildContext context,
-    NoticeSheetModel viewModel,
+    EditDeleteFieldAreaSheetModel viewModel,
     Widget? child,
   ) {
     return Container(
@@ -35,16 +36,18 @@ class NoticeSheet extends StackedView<NoticeSheetModel> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            request.title!,
+            request.title ?? 'Hello Stacked Sheet!!',
             style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
           ),
-          verticalSpaceTiny,
-          Text(
-            request.description!,
-            style: const TextStyle(fontSize: 14, color: kcMediumGrey),
-            maxLines: 3,
-            softWrap: true,
-          ),
+          if (request.description != null) ...[
+            verticalSpaceTiny,
+            Text(
+              request.description!,
+              style: const TextStyle(fontSize: 14, color: kcMediumGrey),
+              maxLines: 3,
+              softWrap: true,
+            ),
+          ],
           verticalSpaceLarge,
         ],
       ),
@@ -52,5 +55,6 @@ class NoticeSheet extends StackedView<NoticeSheetModel> {
   }
 
   @override
-  NoticeSheetModel viewModelBuilder(BuildContext context) => NoticeSheetModel();
+  EditDeleteFieldAreaSheetModel viewModelBuilder(BuildContext context) =>
+      EditDeleteFieldAreaSheetModel();
 }

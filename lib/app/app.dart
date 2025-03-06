@@ -1,4 +1,3 @@
-import 'package:harvest_app/ui/bottom_sheets/notice/notice_sheet.dart';
 import 'package:harvest_app/ui/dialogs/info_alert/info_alert_dialog.dart';
 import 'package:harvest_app/ui/views/auth/login/login_view.dart';
 import 'package:harvest_app/ui/views/auth/register/register_view.dart';
@@ -10,6 +9,8 @@ import 'package:harvest_app/ui/views/auth/register_email/register_email_view.dar
 import 'package:harvest_app/ui/views/create_farm/search_farm/search_farm_view.dart';
 import 'package:harvest_app/ui/views/create_farm/create_farm/confirm_location/confirm_location_view.dart';
 import 'package:harvest_app/ui/views/dashboard/dashboard_view.dart';
+import 'package:harvest_app/ui/views/field_area_library/field_area_library_view.dart';
+import 'package:harvest_app/ui/bottom_sheets/edit_delete_field_area/edit_delete_field_area_sheet.dart';
 // @stacked-import
 
 @StackedApp(
@@ -22,6 +23,7 @@ import 'package:harvest_app/ui/views/dashboard/dashboard_view.dart';
     MaterialRoute(page: SearchFarmView),
     MaterialRoute(page: ConfirmLocationView),
     MaterialRoute(page: DashboardView),
+    MaterialRoute(page: FieldAreaLibraryView),
 // @stacked-route
   ],
   dependencies: [
@@ -31,8 +33,8 @@ import 'package:harvest_app/ui/views/dashboard/dashboard_view.dart';
     // @stacked-service
   ],
   bottomsheets: [
-    StackedBottomsheet(classType: NoticeSheet),
-    // @stacked-bottom-sheet
+    StackedBottomsheet(classType: EditDeleteFieldAreaSheet),
+// @stacked-bottom-sheet
   ],
   dialogs: [
     StackedDialog(classType: InfoAlertDialog),

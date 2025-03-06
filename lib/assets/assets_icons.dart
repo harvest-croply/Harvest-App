@@ -6,4 +6,5 @@ class AssetsIcons {
   static const mapPin = '$path/map-pin.svg';
   static const search = '$path/search.svg';
   static const arrowLeft = '$path/arrow-left.svg';
+  static const more = '$path/more.svg';
 }

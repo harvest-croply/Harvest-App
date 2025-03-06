@@ -28,11 +28,14 @@ harvest_assets: &harvest_assets
   - packages/harvest_app/assets/images/avatar.png
   - packages/harvest_app/assets/images/tree.png
   - packages/harvest_app/assets/images/map.png
+  - packages/harvest_app/assets/images/gardening-rafiki.png
+  - packages/harvest_app/assets/images/field.png
   # icons
   - packages/harvest_app/assets/icons/map.svg
   - packages/harvest_app/assets/icons/map-pin.svg
   - packages/harvest_app/assets/icons/search.svg
   - packages/harvest_app/assets/icons/arrow-left.svg
+  - packages/harvest_app/assets/icons/more.svg
 
 flutter:
   uses-material-design: true

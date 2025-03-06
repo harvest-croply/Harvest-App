@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:harvest_app/ui/views/auth/register_email/widgets/register_header.dart';
 import 'package:harvest_app/ui/widgets/action_button.dart';
+import 'package:harvest_app/ui/widgets/auth_app_bar.dart';
 import 'package:harvest_app/ui/widgets/auth_footer.dart';
-import 'package:harvest_app/ui/widgets/custom_app_bar.dart';
 import 'package:harvest_app/ui/widgets/custom_text_field.dart';
 import 'package:stacked/stacked.dart';
 
@@ -23,7 +23,7 @@ class RegisterEmailView extends StackedView<RegisterEmailViewModel> {
           padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
           child: Column(
             children: [
-              const CustomAppBar(),
+              const AuthAppBar(),
               const RegisterEmailHeader(),
               const SizedBox(height: 32),
               ActionButton(

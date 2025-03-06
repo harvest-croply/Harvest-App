@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/ui/views/create_farm/search_farm/widgets/search_area_card.dart';
-import 'package:harvest_app/ui/widgets/search_bar.dart';
+import 'package:harvest_app/ui/widgets/custom_search_bar.dart';
 import 'package:stacked/stacked.dart';
 
 import 'search_farm_viewmodel.dart';

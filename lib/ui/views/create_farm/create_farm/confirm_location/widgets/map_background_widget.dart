@@ -5,11 +5,9 @@ class MapBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Expanded(
-        child: Container(
-          color: Colors.white,
-        ),
+    return Expanded(
+      child: Container(
+        color: Colors.white,
       ),
     );
   }

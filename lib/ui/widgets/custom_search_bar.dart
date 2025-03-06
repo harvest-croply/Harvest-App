@@ -3,7 +3,8 @@ import 'package:harvest_app/app/constants/custom_colors.dart';
 
 class CustomSearchBar extends StatelessWidget {
   final Function? onTap;
-  const CustomSearchBar({super.key, this.onTap});
+  final String? placeholder;
+  const CustomSearchBar({super.key, this.onTap, this.placeholder});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class CustomSearchBar extends StatelessWidget {
           ),
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          hintText: 'Cari Lokasi',
+          hintText: placeholder ?? '',
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
               width: 1,
