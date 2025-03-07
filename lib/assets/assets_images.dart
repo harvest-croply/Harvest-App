@@ -6,6 +6,9 @@ class AssetsImages {
   static const avatar = '$path/avatar.png';
   static const tree = '$path/tree.png';
   static const map = '$path/map.png';
-  static const gardeningIlusstration = '$path/gardening-rafiki.png';
+  static const gardeningIlusstration = '$path/gardening.png';
+  static const seedingIlustration = '$path/seeding.png';
+  static const seedingIlustration2 = '$path/seeding2.png';
   static const field = '$path/field.png';
+  static const seedling = '$path/seedling.png';
 }

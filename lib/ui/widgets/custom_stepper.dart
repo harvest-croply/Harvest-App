@@ -3,7 +3,12 @@ import 'package:harvest_app/app/constants/custom_colors.dart';
 
 class CustomStepper extends StatelessWidget {
   final int count;
-  const CustomStepper({super.key, required this.count});
+  final int currentStep;
+  const CustomStepper({
+    super.key,
+    required this.count,
+    required this.currentStep,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +22,14 @@ class CustomStepper extends StatelessWidget {
           itemCount: count,
           scrollDirection: Axis.horizontal,
           itemBuilder: (BuildContext context, int index) {
-            return stepper(context);
+            return stepper(context, index);
           },
         ),
       ),
     );
   }
 
-  Widget stepper(BuildContext context) {
+  Widget stepper(BuildContext context, int index) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4),
       child: Container(
@@ -33,7 +38,9 @@ class CustomStepper extends StatelessWidget {
             ((MediaQuery.of(context).size.width - ((count + 1) * 8)) / count),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: CustomColors.primeGreen30,
+          color: index < currentStep
+              ? CustomColors.primeGreen30
+              : CustomColors.primeGreen10,
         ),
       ),
     );

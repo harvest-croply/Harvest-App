@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/assets/assets_images.dart';
+import 'package:harvest_app/ui/views/field_area_form/widgets/step_one.dart';
+import 'package:harvest_app/ui/views/field_area_form/widgets/step_three.dart';
+import 'package:harvest_app/ui/views/field_area_form/widgets/step_two.dart';
+import 'package:harvest_app/ui/widgets/action_button.dart';
 import 'package:harvest_app/ui/widgets/custom_app_bar.dart';
 import 'package:harvest_app/ui/widgets/custom_stepper.dart';
+import 'package:harvest_app/ui/widgets/custom_text_field.dart';
 import 'package:stacked/stacked.dart';
 
 import 'field_area_form_viewmodel.dart';
@@ -21,19 +27,38 @@ class FieldAreaFormView extends StackedView<FieldAreaFormViewModel> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const CustomStepper(count: 3),
-              const SizedBox(height: 16),
-              Image.asset(
-                AssetsImages.gardeningIlusstration,
-                height: 170,
+              CustomStepper(
+                count: 3,
+                currentStep: viewModel.step,
               ),
-              const SizedBox(height: 8),
-              const Text("Buat Field Area Untuk Kebunmu"),
+              const SizedBox(height: 16),
+              buildForm(viewModel.step),
             ],
           ),
         ),
       ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: ActionButton(
+            text: "Selanjutnya",
+            onTap: () {
+              viewModel.nextStep();
+            }),
+      ),
     );
+  }
+
+  Widget buildForm(int step) {
+    switch (step) {
+      case 1:
+        return const FieldAreaFormStepOne();
+      case 2:
+        return const FieldAreaFormStepTwo();
+      case 3:
+        return const FieldAreaFormStepThree();
+      default:
+        return Container();
+    }
   }
 
   @override

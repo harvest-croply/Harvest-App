@@ -30,7 +30,7 @@ ThemeData buildTheme(brightness) {
         titleSmall: const TextStyle(
           color: Colors.black,
           fontSize: 20,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w400,
         ),
         // Body 1
         bodyLarge: const TextStyle(
