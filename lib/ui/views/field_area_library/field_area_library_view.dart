@@ -55,7 +55,9 @@ class FieldAreaLibraryView extends StackedView<FieldAreaLibraryViewModel> {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: ActionButton(
           text: "+ Tambah Field Area",
-          onTap: () {},
+          onTap: () {
+            viewModel.createNewFielArea();
+          },
         ),
       ),
     );

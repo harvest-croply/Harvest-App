@@ -11,6 +11,7 @@ import 'package:harvest_app/ui/views/create_farm/create_farm/confirm_location/co
 import 'package:harvest_app/ui/views/dashboard/dashboard_view.dart';
 import 'package:harvest_app/ui/views/field_area_library/field_area_library_view.dart';
 import 'package:harvest_app/ui/bottom_sheets/edit_delete_field_area/edit_delete_field_area_sheet.dart';
+import 'package:harvest_app/ui/views/field_area_form/field_area_form_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -24,6 +25,7 @@ import 'package:harvest_app/ui/bottom_sheets/edit_delete_field_area/edit_delete_
     MaterialRoute(page: ConfirmLocationView),
     MaterialRoute(page: DashboardView),
     MaterialRoute(page: FieldAreaLibraryView),
+    MaterialRoute(page: FieldAreaFormView),
 // @stacked-route
   ],
   dependencies: [
