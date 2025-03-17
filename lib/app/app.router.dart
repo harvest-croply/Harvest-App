@@ -5,26 +5,32 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i12;
+import 'package:flutter/material.dart' as _i14;
 import 'package:flutter/material.dart';
-import 'package:harvest_app/ui/views/auth/login/login_view.dart' as _i3;
-import 'package:harvest_app/ui/views/auth/register/register_view.dart' as _i4;
-import 'package:harvest_app/ui/views/auth/register_email/register_email_view.dart'
+import 'package:harvest_app/features/views/auth/login/login_view.dart' as _i3;
+import 'package:harvest_app/features/views/auth/register/register_view.dart'
+    as _i4;
+import 'package:harvest_app/features/views/auth/register_email/register_email_view.dart'
     as _i5;
-import 'package:harvest_app/ui/views/create_farm/create_farm/confirm_location/confirm_location_view.dart'
+import 'package:harvest_app/features/views/create_farm/create_farm/confirm_location/confirm_location_view.dart'
     as _i8;
-import 'package:harvest_app/ui/views/create_farm/create_farm/create_farm_view.dart'
+import 'package:harvest_app/features/views/create_farm/create_farm/create_farm_view.dart'
     as _i6;
-import 'package:harvest_app/ui/views/create_farm/search_farm/search_farm_view.dart'
+import 'package:harvest_app/features/views/create_farm/search_farm/search_farm_view.dart'
     as _i7;
-import 'package:harvest_app/ui/views/dashboard/dashboard_view.dart' as _i9;
-import 'package:harvest_app/ui/views/field_area_form/field_area_form_view.dart'
+import 'package:harvest_app/features/views/harvest_report/create_harvest_report/create_harvest_report_view.dart'
+    as _i13;
+import 'package:harvest_app/features/views/dashboard/dashboard_view.dart'
+    as _i9;
+import 'package:harvest_app/features/views/field_area/field_area_form/field_area_form_view.dart'
     as _i11;
-import 'package:harvest_app/ui/views/field_area_library/field_area_library_view.dart'
+import 'package:harvest_app/features/views/field_area/field_area_library/field_area_library_view.dart'
     as _i10;
-import 'package:harvest_app/ui/views/startup/startup_view.dart' as _i2;
+import 'package:harvest_app/features/views/harvest_report/harvest_report_list/harvest_report_view.dart'
+    as _i12;
+import 'package:harvest_app/features/views/startup/startup_view.dart' as _i2;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i13;
+import 'package:stacked_services/stacked_services.dart' as _i15;
 
 class Routes {
   static const startupView = '/startup-view';
@@ -47,6 +53,10 @@ class Routes {
 
   static const fieldAreaFormView = '/field-area-form-view';
 
+  static const harvestReportView = '/harvest-report-view';
+
+  static const createHarvestReportView = '/create-harvest-report-view';
+
   static const all = <String>{
     startupView,
     loginView,
@@ -58,6 +68,8 @@ class Routes {
     dashboardView,
     fieldAreaLibraryView,
     fieldAreaFormView,
+    harvestReportView,
+    createHarvestReportView,
   };
 }
 
@@ -103,11 +115,19 @@ class StackedRouter extends _i1.RouterBase {
       Routes.fieldAreaFormView,
       page: _i11.FieldAreaFormView,
     ),
+    _i1.RouteDef(
+      Routes.harvestReportView,
+      page: _i12.HarvestReportView,
+    ),
+    _i1.RouteDef(
+      Routes.createHarvestReportView,
+      page: _i13.CreateHarvestReportView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.StartupView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.StartupView(),
         settings: data,
       );
@@ -116,37 +136,37 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<LoginViewArguments>(
         orElse: () => const LoginViewArguments(),
       );
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => _i3.LoginView(key: args.key),
         settings: data,
       );
     },
     _i4.RegisterView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.RegisterView(),
         settings: data,
       );
     },
     _i5.RegisterEmailView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.RegisterEmailView(),
         settings: data,
       );
     },
     _i6.CreateFarmView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.CreateFarmView(),
         settings: data,
       );
     },
     _i7.SearchFarmView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.SearchFarmView(),
         settings: data,
       );
     },
     _i8.ConfirmLocationView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.ConfirmLocationView(),
         settings: data,
       );
@@ -155,20 +175,32 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<DashboardViewArguments>(
         orElse: () => const DashboardViewArguments(),
       );
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => _i9.DashboardView(key: args.key),
         settings: data,
       );
     },
     _i10.FieldAreaLibraryView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.FieldAreaLibraryView(),
         settings: data,
       );
     },
     _i11.FieldAreaFormView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.FieldAreaFormView(),
+        settings: data,
+      );
+    },
+    _i12.HarvestReportView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i12.HarvestReportView(),
+        settings: data,
+      );
+    },
+    _i13.CreateHarvestReportView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i13.CreateHarvestReportView(),
         settings: data,
       );
     },
@@ -184,7 +216,7 @@ class StackedRouter extends _i1.RouterBase {
 class LoginViewArguments {
   const LoginViewArguments({this.key});
 
-  final _i12.Key? key;
+  final _i14.Key? key;
 
   @override
   String toString() {
@@ -206,7 +238,7 @@ class LoginViewArguments {
 class DashboardViewArguments {
   const DashboardViewArguments({this.key});
 
-  final _i12.Key? key;
+  final _i14.Key? key;
 
   @override
   String toString() {
@@ -225,7 +257,7 @@ class DashboardViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i13.NavigationService {
+extension NavigatorStateExtension on _i15.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -241,7 +273,7 @@ extension NavigatorStateExtension on _i13.NavigationService {
   }
 
   Future<dynamic> navigateToLoginView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -327,7 +359,7 @@ extension NavigatorStateExtension on _i13.NavigationService {
   }
 
   Future<dynamic> navigateToDashboardView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -370,6 +402,34 @@ extension NavigatorStateExtension on _i13.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToHarvestReportView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.harvestReportView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToCreateHarvestReportView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.createHarvestReportView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -385,7 +445,7 @@ extension NavigatorStateExtension on _i13.NavigationService {
   }
 
   Future<dynamic> replaceWithLoginView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -471,7 +531,7 @@ extension NavigatorStateExtension on _i13.NavigationService {
   }
 
   Future<dynamic> replaceWithDashboardView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -508,6 +568,34 @@ extension NavigatorStateExtension on _i13.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.fieldAreaFormView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithHarvestReportView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.harvestReportView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithCreateHarvestReportView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.createHarvestReportView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

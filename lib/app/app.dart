@@ -1,17 +1,19 @@
-import 'package:harvest_app/ui/dialogs/info_alert/info_alert_dialog.dart';
-import 'package:harvest_app/ui/views/auth/login/login_view.dart';
-import 'package:harvest_app/ui/views/auth/register/register_view.dart';
-import 'package:harvest_app/ui/views/create_farm/create_farm/create_farm_view.dart';
-import 'package:harvest_app/ui/views/startup/startup_view.dart';
+import 'package:harvest_app/features/dialogs/info_alert/info_alert_dialog.dart';
+import 'package:harvest_app/features/views/auth/login/login_view.dart';
+import 'package:harvest_app/features/views/auth/register/register_view.dart';
+import 'package:harvest_app/features/views/create_farm/create_farm/create_farm_view.dart';
+import 'package:harvest_app/features/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:harvest_app/ui/views/auth/register_email/register_email_view.dart';
-import 'package:harvest_app/ui/views/create_farm/search_farm/search_farm_view.dart';
-import 'package:harvest_app/ui/views/create_farm/create_farm/confirm_location/confirm_location_view.dart';
-import 'package:harvest_app/ui/views/dashboard/dashboard_view.dart';
-import 'package:harvest_app/ui/views/field_area_library/field_area_library_view.dart';
-import 'package:harvest_app/ui/bottom_sheets/edit_delete_field_area/edit_delete_field_area_sheet.dart';
-import 'package:harvest_app/ui/views/field_area_form/field_area_form_view.dart';
+import 'package:harvest_app/features/views/auth/register_email/register_email_view.dart';
+import 'package:harvest_app/features/views/create_farm/search_farm/search_farm_view.dart';
+import 'package:harvest_app/features/views/create_farm/create_farm/confirm_location/confirm_location_view.dart';
+import 'package:harvest_app/features/views/dashboard/dashboard_view.dart';
+import 'package:harvest_app/features/views/field_area/field_area_library/field_area_library_view.dart';
+import 'package:harvest_app/features/bottom_sheets/edit_delete_field_area/edit_delete_field_area_sheet.dart';
+import 'package:harvest_app/features/views/field_area/field_area_form/field_area_form_view.dart';
+import 'package:harvest_app/features/views/harvest_report/harvest_report_list/harvest_report_view.dart';
+import 'package:harvest_app/features/views/harvest_report/create_harvest_report/create_harvest_report_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -26,6 +28,8 @@ import 'package:harvest_app/ui/views/field_area_form/field_area_form_view.dart';
     MaterialRoute(page: DashboardView),
     MaterialRoute(page: FieldAreaLibraryView),
     MaterialRoute(page: FieldAreaFormView),
+    MaterialRoute(page: HarvestReportView),
+    MaterialRoute(page: CreateHarvestReportView),
 // @stacked-route
   ],
   dependencies: [

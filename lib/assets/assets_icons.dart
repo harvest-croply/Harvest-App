@@ -10,4 +10,8 @@ class AssetsIcons {
   static const edit = '$path/edit.svg';
   static const delete = '$path/delete.svg';
   static const close = '$path/close.svg';
+  static const sidebar = '$path/sidebar.svg';
+  static const chevronRight = '$path/chevron-right.svg';
+  static const chevronDown = '$path/chevron-down.svg';
+  static const calender = '$path/calender.svg';
 }

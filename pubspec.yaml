@@ -33,6 +33,11 @@ harvest_assets: &harvest_assets
   - packages/harvest_app/assets/images/seeding2.png
   - packages/harvest_app/assets/images/field.png
   - packages/harvest_app/assets/images/seedling.png
+  - packages/harvest_app/assets/images/calender.png
+  - packages/harvest_app/assets/images/gardening2.png
+  - packages/harvest_app/assets/images/market.png
+  - packages/harvest_app/assets/images/report.png
+  - packages/harvest_app/assets/images/schedule.png
   # icons
   - packages/harvest_app/assets/icons/map.svg
   - packages/harvest_app/assets/icons/map-pin.svg
@@ -42,6 +47,10 @@ harvest_assets: &harvest_assets
   - packages/harvest_app/assets/icons/edit.svg
   - packages/harvest_app/assets/icons/delete.svg
   - packages/harvest_app/assets/icons/close.svg
+  - packages/harvest_app/assets/icons/sidebar.svg
+  - packages/harvest_app/assets/icons/chevron-right.svg
+  - packages/harvest_app/assets/icons/chevron-down.svg
+  - packages/harvest_app/assets/icons/calender.svg
 
 flutter:
   uses-material-design: true
