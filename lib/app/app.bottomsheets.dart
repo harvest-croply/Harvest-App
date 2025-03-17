@@ -7,7 +7,7 @@
 import 'package:stacked_services/stacked_services.dart';
 
 import 'app.locator.dart';
-import '../features/bottom_sheets/edit_delete_field_area/edit_delete_field_area_sheet.dart';
+import '../shared/bottom_sheets/edit_delete_field_area/edit_delete_field_area_sheet.dart';
 
 enum BottomSheetType {
   editDeleteFieldArea,

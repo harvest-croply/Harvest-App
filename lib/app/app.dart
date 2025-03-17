@@ -1,19 +1,19 @@
-import 'package:harvest_app/features/dialogs/info_alert/info_alert_dialog.dart';
-import 'package:harvest_app/features/views/auth/login/login_view.dart';
-import 'package:harvest_app/features/views/auth/register/register_view.dart';
-import 'package:harvest_app/features/views/create_farm/create_farm/create_farm_view.dart';
-import 'package:harvest_app/features/views/startup/startup_view.dart';
+import 'package:harvest_app/shared/dialogs/info_alert/info_alert_dialog.dart';
+import 'package:harvest_app/features/auth/login/login_view.dart';
+import 'package:harvest_app/features/auth/register/register_view.dart';
+import 'package:harvest_app/features/create_farm/create_farm/create_farm_view.dart';
+import 'package:harvest_app/features/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:harvest_app/features/views/auth/register_email/register_email_view.dart';
-import 'package:harvest_app/features/views/create_farm/search_farm/search_farm_view.dart';
-import 'package:harvest_app/features/views/create_farm/create_farm/confirm_location/confirm_location_view.dart';
-import 'package:harvest_app/features/views/dashboard/dashboard_view.dart';
-import 'package:harvest_app/features/views/field_area/field_area_library/field_area_library_view.dart';
-import 'package:harvest_app/features/bottom_sheets/edit_delete_field_area/edit_delete_field_area_sheet.dart';
-import 'package:harvest_app/features/views/field_area/field_area_form/field_area_form_view.dart';
-import 'package:harvest_app/features/views/harvest_report/harvest_report_list/harvest_report_view.dart';
-import 'package:harvest_app/features/views/harvest_report/create_harvest_report/create_harvest_report_view.dart';
+import 'package:harvest_app/features/auth/register_email/register_email_view.dart';
+import 'package:harvest_app/features/create_farm/search_farm/search_farm_view.dart';
+import 'package:harvest_app/features/create_farm/create_farm/confirm_location/confirm_location_view.dart';
+import 'package:harvest_app/features/dashboard/dashboard_view.dart';
+import 'package:harvest_app/features/field_area/field_area_library/field_area_library_view.dart';
+import 'package:harvest_app/shared/bottom_sheets/edit_delete_field_area/edit_delete_field_area_sheet.dart';
+import 'package:harvest_app/features/field_area/field_area_form/field_area_form_view.dart';
+import 'package:harvest_app/features/harvest_report/harvest_report_list/harvest_report_view.dart';
+import 'package:harvest_app/features/harvest_report/create_harvest_report/create_harvest_report_view.dart';
 // @stacked-import
 
 @StackedApp(
