@@ -4,6 +4,7 @@ import 'package:harvest_app/app/app.router.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/assets/assets_images.dart';
 import 'package:harvest_app/features/dashboard/widgets/dashboard_card.dart';
+import 'package:harvest_app/features/dashboard/widgets/drawer.dart';
 import 'package:harvest_app/features/dashboard/widgets/header.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -25,6 +26,9 @@ class DashboardView extends StackedView<DashboardViewModel> {
         toolbarHeight: 0,
         backgroundColor: CustomColors.primeGreen30,
         elevation: 0,
+      ),
+      drawer: const Drawer(
+        child: DashboardDrawer(),
       ),
       body: SafeArea(
         child: Column(

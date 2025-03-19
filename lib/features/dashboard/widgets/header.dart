@@ -4,12 +4,18 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/assets/assets_icons.dart';
 import 'package:harvest_app/assets/assets_images.dart';
+import 'package:harvest_app/features/dashboard/dashboard_viewmodel.dart';
+import 'package:stacked/stacked.dart';
 
-class DashboardHeader extends StatelessWidget {
-  const DashboardHeader({super.key});
+class DashboardHeader extends StackedView<DashboardViewModel> {
+  const DashboardHeader({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget builder(
+    BuildContext context,
+    DashboardViewModel viewModel,
+    Widget? child,
+  ) {
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 24,
@@ -21,8 +27,13 @@ class DashboardHeader extends StatelessWidget {
         children: [
           Row(
             children: [
-              SvgPicture.asset(
-                AssetsIcons.sidebar,
+              GestureDetector(
+                onTap: () {
+                  viewModel.openDrawer(context);
+                },
+                child: SvgPicture.asset(
+                  AssetsIcons.sidebar,
+                ),
               ),
               const SizedBox(width: 8),
               Flexible(
@@ -70,4 +81,10 @@ class DashboardHeader extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  DashboardViewModel viewModelBuilder(
+    BuildContext context,
+  ) =>
+      DashboardViewModel();
 }
