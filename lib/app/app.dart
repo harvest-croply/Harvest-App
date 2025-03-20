@@ -14,6 +14,7 @@ import 'package:harvest_app/shared/bottom_sheets/edit_delete_field_area/edit_del
 import 'package:harvest_app/features/field_area/field_area_form/field_area_form_view.dart';
 import 'package:harvest_app/features/harvest_report/harvest_report_list/harvest_report_view.dart';
 import 'package:harvest_app/features/harvest_report/create_harvest_report/create_harvest_report_view.dart';
+import 'package:harvest_app/shared/bottom_sheets/edit_delete_farm/edit_delete_farm_sheet.dart';
 // @stacked-import
 
 @StackedApp(
@@ -40,6 +41,7 @@ import 'package:harvest_app/features/harvest_report/create_harvest_report/create
   ],
   bottomsheets: [
     StackedBottomsheet(classType: EditDeleteFieldAreaSheet),
+    StackedBottomsheet(classType: EditDeleteFarmSheet),
 // @stacked-bottom-sheet
   ],
   dialogs: [

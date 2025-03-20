@@ -27,7 +27,7 @@ class DashboardView extends StackedView<DashboardViewModel> {
         backgroundColor: CustomColors.primeGreen30,
         elevation: 0,
       ),
-      drawer: const Drawer(
+      drawer: Drawer(
         child: DashboardDrawer(),
       ),
       body: SafeArea(

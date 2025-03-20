@@ -17,13 +17,13 @@ import 'package:harvest_app/features/create_farm/create_farm/create_farm_view.da
     as _i6;
 import 'package:harvest_app/features/create_farm/search_farm/search_farm_view.dart'
     as _i7;
-import 'package:harvest_app/features/harvest_report/create_harvest_report/create_harvest_report_view.dart'
-    as _i13;
 import 'package:harvest_app/features/dashboard/dashboard_view.dart' as _i9;
 import 'package:harvest_app/features/field_area/field_area_form/field_area_form_view.dart'
     as _i11;
 import 'package:harvest_app/features/field_area/field_area_library/field_area_library_view.dart'
     as _i10;
+import 'package:harvest_app/features/harvest_report/create_harvest_report/create_harvest_report_view.dart'
+    as _i13;
 import 'package:harvest_app/features/harvest_report/harvest_report_list/harvest_report_view.dart'
     as _i12;
 import 'package:harvest_app/features/startup/startup_view.dart' as _i2;

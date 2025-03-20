@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:harvest_app/app/app.bottomsheets.dart';
+import 'package:harvest_app/app/app.locator.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/assets/assets_icons.dart';
 import 'package:harvest_app/assets/assets_images.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class DashboardDrawer extends StatelessWidget {
-  const DashboardDrawer({super.key});
+  DashboardDrawer({super.key});
+
+  final _bottomSheetService = locator<BottomSheetService>();
 
   @override
   Widget build(BuildContext context) {
@@ -90,10 +95,15 @@ class DashboardDrawer extends StatelessWidget {
               ],
             ),
           ),
-          SvgPicture.asset(
-            AssetsIcons.more,
-            width: 24,
-            height: 24,
+          GestureDetector(
+            onTap: () {
+              openEditDeleteBottomSheet();
+            },
+            child: SvgPicture.asset(
+              AssetsIcons.more,
+              width: 24,
+              height: 24,
+            ),
           ),
         ],
       ),
@@ -135,6 +145,13 @@ class DashboardDrawer extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  openEditDeleteBottomSheet() {
+    _bottomSheetService.showCustomSheet(
+      variant: BottomSheetType.editDeleteFarm,
+      title: 'Field Area 1',
     );
   }
 }
