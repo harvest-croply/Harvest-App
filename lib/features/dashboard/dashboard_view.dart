@@ -68,7 +68,9 @@ class DashboardView extends StackedView<DashboardViewModel> {
                       title: 'See Harvest Report Data',
                       subTitle: 'Harvest Data Chart',
                       image: AssetsImages.market,
-                      onTap: () {},
+                      onTap: () {
+                        _navigationService.navigateToReportDashboardView();
+                      },
                     ),
                   ],
                 ),

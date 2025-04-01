@@ -16,7 +16,9 @@ class CreateHarvestReportView
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-        child: const Center(child: Text("CreateHarvestReportView")),
+        child: const Center(
+          child: Text("CreateHarvestReportView"),
+        ),
       ),
     );
   }
