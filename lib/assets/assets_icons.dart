@@ -14,5 +14,6 @@ class AssetsIcons {
   static const chevronRight = '$path/chevron-right.svg';
   static const chevronDown = '$path/chevron-down.svg';
   static const calender = '$path/calender.svg';
+  static const calendar = '$path/calendar.svg';
   static const plusCircle = '$path/plus-circle.svg';
 }
