@@ -53,6 +53,8 @@ harvest_assets: &harvest_assets
   - packages/harvest_app/assets/icons/chevron-down.svg
   - packages/harvest_app/assets/icons/calender.svg
   - packages/harvest_app/assets/icons/plus-circle.svg
+  # background
+  - packages/harvest_app/assets/svg/onboard_bg.svg
 
 flutter:
   uses-material-design: true

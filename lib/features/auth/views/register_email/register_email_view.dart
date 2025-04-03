@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:harvest_app/features/auth/register_email/widgets/register_header.dart';
+import 'package:harvest_app/features/auth/views/register_email/widgets/register_header.dart';
 import 'package:harvest_app/shared/widgets/action_button.dart';
 import 'package:harvest_app/shared/widgets/auth_app_bar.dart';
 import 'package:harvest_app/shared/widgets/auth_footer.dart';
