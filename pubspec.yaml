@@ -51,8 +51,7 @@ harvest_assets: &harvest_assets
   - packages/harvest_app/assets/icons/sidebar.svg
   - packages/harvest_app/assets/icons/chevron-right.svg
   - packages/harvest_app/assets/icons/chevron-down.svg
-  - packages/harvest_app/assets/icons/calender.svg
-  - packages/harvest_app/assets/icons/calander.svg
+  - packages/harvest_app/assets/icons/calendar.svg
   - packages/harvest_app/assets/icons/plus-circle.svg
 
 flutter:

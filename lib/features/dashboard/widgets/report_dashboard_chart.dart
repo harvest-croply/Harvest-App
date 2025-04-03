@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:harvest_app/app/app.bottomsheets.dart';
+import 'package:harvest_app/app/app.locator.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/app/constants/text_theme.dart';
 import 'package:harvest_app/assets/assets_icons.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class ReportDashboardChart extends StatelessWidget {
   ReportDashboardChart({super.key});
+
+  final _bottomSheetService = locator<BottomSheetService>();
 
   final List datas = [
     [200, 400, 500],
@@ -14,6 +19,13 @@ class ReportDashboardChart extends StatelessWidget {
     [175, 250, 300],
     [200, 350, 375],
   ];
+
+  openFilterFieldAreaSheet() {
+    _bottomSheetService.showCustomSheet(
+      variant: BottomSheetType.filterFieldArea,
+      title: 'Filter Field Area',
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +43,16 @@ class ReportDashboardChart extends StatelessWidget {
         const SizedBox(height: 16),
         Row(
           children: [
-            filterDropdown('Semua Field Area', ''),
+            filterDropdown(
+                text: 'Semua Field Area',
+                onTap: () {
+                  openFilterFieldAreaSheet();
+                }),
             const SizedBox(width: 8),
-            filterDropdown('Date', AssetsIcons.calender),
+            filterDropdown(
+              text: 'Date',
+              icon: AssetsIcons.calendar,
+            ),
           ],
         ),
         const SizedBox(height: 16),
@@ -51,50 +70,57 @@ class ReportDashboardChart extends StatelessWidget {
   }
 }
 
-Widget filterDropdown(String text, String? icon) {
-  return Expanded(
-    child: Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          width: 1,
-          color: CustomColors.slate200,
+Widget filterDropdown({required String text, String? icon, Function? onTap}) {
+  return GestureDetector(
+    onTap: () {
+      if (onTap != null) {
+        onTap();
+      }
+    },
+    child: Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            width: 1,
+            color: CustomColors.slate200,
+          ),
         ),
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              if (icon != '')
-                Padding(
-                  padding: const EdgeInsets.only(right: 4),
-                  child: SvgPicture.asset(
-                    icon!,
-                    width: 12,
-                    height: 12,
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                if (icon != null)
+                  Padding(
+                    padding: const EdgeInsets.only(right: 4),
+                    child: SvgPicture.asset(
+                      icon,
+                      width: 12,
+                      height: 12,
+                      color: CustomColors.neutral800,
+                    ),
+                  ),
+                Text(
+                  text,
+                  style: GoogleFonts.roboto(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
                     color: CustomColors.neutral800,
                   ),
                 ),
-              Text(
-                text,
-                style: GoogleFonts.roboto(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                  color: CustomColors.neutral800,
-                ),
-              ),
-            ],
-          ),
-          SvgPicture.asset(
-            AssetsIcons.chevronDown,
-            width: 12,
-            height: 12,
-            color: CustomColors.neutral800,
-          ),
-        ],
+              ],
+            ),
+            SvgPicture.asset(
+              AssetsIcons.chevronDown,
+              width: 12,
+              height: 12,
+              color: CustomColors.neutral800,
+            ),
+          ],
+        ),
       ),
     ),
   );

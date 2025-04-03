@@ -19,7 +19,7 @@ class CustomDatePicker extends StatelessWidget {
           Row(
             children: [
               SvgPicture.asset(
-                AssetsIcons.calender,
+                AssetsIcons.calendar,
                 width: 20,
                 height: 20,
               ),
