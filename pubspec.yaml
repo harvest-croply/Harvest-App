@@ -39,6 +39,7 @@ harvest_assets: &harvest_assets
   - packages/harvest_app/assets/images/report.png
   - packages/harvest_app/assets/images/schedule.png
   - packages/harvest_app/assets/images/farm_avatar.png
+  - packages/harvest_app/assets/images/date_picker_rafiki.png
   # icons
   - packages/harvest_app/assets/icons/map.svg
   - packages/harvest_app/assets/icons/map-pin.svg
