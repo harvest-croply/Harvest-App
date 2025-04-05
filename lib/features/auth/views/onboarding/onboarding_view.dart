@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:harvest_app/app/app.locator.dart';
+import 'package:harvest_app/app/app.router.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/shared/widgets/action_button.dart';
 import 'package:harvest_app/shared/widgets/custom_divider.dart';
 import 'package:harvest_app/shared/widgets/form_card.dart';
 import 'package:harvest_app/shared/widgets/google_auth_button.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 import 'onboarding_viewmodel.dart';
 
 class OnboardingView extends StackedView<OnboardingViewModel> {
-  const OnboardingView({Key? key}) : super(key: key);
+  OnboardingView({Key? key}) : super(key: key);
 
-  void _onRegisterByEmail() {}
+  final _navigationService = locator<NavigationService>();
 
-  void _onLogin() {}
+  void _onRegisterByEmail() {
+    _navigationService.navigateToRegisterView();
+  }
+
+  void _onLogin() {
+    _navigationService.navigateToLoginView();
+  }
 
   @override
   Widget builder(
