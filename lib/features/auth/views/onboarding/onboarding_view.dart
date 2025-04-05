@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/shared/widgets/action_button.dart';
 import 'package:harvest_app/shared/widgets/custom_divider.dart';
@@ -14,6 +13,8 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
 
   void _onRegisterByEmail() {}
 
+  void _onLogin() {}
+
   @override
   Widget builder(
     BuildContext context,
@@ -24,11 +25,13 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
       backgroundColor: CustomColors.primeGreen10,
       body: Stack(
         children: [
-          Expanded(
-            child: SvgPicture.asset(
-              'packages/harvest_app/assets/svg/onboard_bg.svg',
+          SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: Image.asset(
+              'packages/harvest_app/assets/images/onboarding-bg.png',
               width: double.infinity,
-              fit: BoxFit.fitHeight,
+              fit: BoxFit.fitWidth,
             ),
           ),
           Positioned(
@@ -50,9 +53,9 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
                   ),
                   const SizedBox(height: 4),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: _onLogin,
                     child: Text(
-                      "Register",
+                      "Login",
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                             color: CustomColors.primeGreen30,
                             decoration: TextDecoration.underline,
