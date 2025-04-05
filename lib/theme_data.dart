@@ -60,7 +60,7 @@ ThemeData buildTheme(brightness) {
         labelMedium: const TextStyle(
           color: Colors.black,
           fontSize: 14,
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.w600,
         ),
         // Button Small
         labelSmall: const TextStyle(
