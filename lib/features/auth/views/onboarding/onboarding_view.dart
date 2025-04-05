@@ -17,7 +17,7 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
   final _navigationService = locator<NavigationService>();
 
   void _onRegisterByEmail() {
-    _navigationService.navigateToRegisterView();
+    _navigationService.navigateToRegisterEmailView();
   }
 
   void _onLogin() {
