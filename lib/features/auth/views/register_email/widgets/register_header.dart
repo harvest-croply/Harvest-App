@@ -1,15 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:harvest_app/app/app.locator.dart';
+import 'package:harvest_app/assets/assets_icons.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class RegisterEmailHeader extends StatelessWidget {
-  const RegisterEmailHeader({super.key});
+  RegisterEmailHeader({super.key});
+
+  final _navigationService = locator<NavigationService>();
+
+  void _onBack() {
+    _navigationService.back();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Register",
-      style: TextStyle(
-        fontSize: 20,
-        fontWeight: FontWeight.w700,
+    // return const Text(
+    //   "Register",
+    //   style: TextStyle(
+    //     fontSize: 20,
+    //     fontWeight: FontWeight.w700,
+    //   ),
+    // );
+
+    return Container(
+      padding: const EdgeInsets.all(16),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          GestureDetector(
+            onTap: _onBack,
+            child: SvgPicture.asset(
+              AssetsIcons.arrowLeft,
+              height: 24,
+            ),
+          ),
+          // Center(
+          //   child: Text("Register", style: CustomText),
+          // ),
+          const SizedBox(
+            width: 24,
+          ),
+        ],
       ),
     );
   }

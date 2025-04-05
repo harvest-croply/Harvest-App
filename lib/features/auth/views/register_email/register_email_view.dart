@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/features/auth/views/register_email/widgets/register_header.dart';
 import 'package:harvest_app/shared/widgets/action_button.dart';
-import 'package:harvest_app/shared/widgets/auth_app_bar.dart';
 import 'package:harvest_app/shared/widgets/auth_footer.dart';
 import 'package:harvest_app/shared/widgets/custom_text_field.dart';
+import 'package:harvest_app/shared/widgets/form_card.dart';
 import 'package:stacked/stacked.dart';
 
 import 'register_email_viewmodel.dart';
@@ -18,33 +19,27 @@ class RegisterEmailView extends StackedView<RegisterEmailViewModel> {
     Widget? child,
   ) {
     return Scaffold(
+      backgroundColor: CustomColors.primeGreen10,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-          child: Column(
-            children: [
-              const AuthAppBar(),
-              const RegisterEmailHeader(),
-              const SizedBox(height: 32),
-              ActionButton(
-                text: "Daftar",
-                onTap: () {},
+        child: Stack(
+          children: [
+            RegisterEmailHeader(),
+            Image.asset(
+              "packages/harvest_app/assets/images/register-bg.png",
+            ),
+            Positioned(
+              top: MediaQuery.of(context).size.width / 2,
+              child: Expanded(
+                child: FormCard(
+                  child: Column(
+                    children: [
+                      AuthFooter(),
+                    ],
+                  ),
+                ),
               ),
-              const CustomTextField(
-                text: 'Nama Lengkap',
-                placeHolder: 'Masukan Nama Lengkap',
-              ),
-              const CustomTextField(
-                text: 'Email',
-                placeHolder: 'Masukan Email',
-              ),
-              const CustomTextField(
-                text: 'Password',
-                placeHolder: 'Masukan Password',
-              ),
-              AuthFooter(),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
