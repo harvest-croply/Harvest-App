@@ -13,4 +13,8 @@ class UserSettingsViewModel extends BaseViewModel {
   void navigateToEditProfile() {
     _navigationService.navigateToEditProfileView();
   }
+
+  void navigateToChangePassword() {
+    _navigationService.navigateToChangePasswordView();
+  }
 }

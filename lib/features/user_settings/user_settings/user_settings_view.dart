@@ -148,28 +148,33 @@ class UserSettingsView extends StackedView<UserSettingsViewModel> {
           ),
         ),
         const SizedBox(height: 16),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SvgPicture.asset(AssetsIcons.lockClosed),
-            const SizedBox(width: 8),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Atur Password",
-                    style: TextThemeConstants.body2.copyWith(
-                      color: CustomColors.neutral40,
+        GestureDetector(
+          onTap: () {
+            viewModel.navigateToChangePassword();
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SvgPicture.asset(AssetsIcons.lockClosed),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Atur Password",
+                      style: TextThemeConstants.body2.copyWith(
+                        color: CustomColors.neutral40,
+                      ),
                     ),
-                  ),
-                  SvgPicture.asset(
-                    AssetsIcons.chevronRight,
-                  ),
-                ],
+                    SvgPicture.asset(
+                      AssetsIcons.chevronRight,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     );

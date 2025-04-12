@@ -20,6 +20,7 @@ import 'package:harvest_app/shared/filter_field_area/filter_field_area_sheet.dar
 import 'package:harvest_app/shared/bottom_sheets/delete_farm/delete_farm_sheet.dart';
 import 'package:harvest_app/features/user_settings/user_settings/user_settings_view.dart';
 import 'package:harvest_app/features/user_settings/edit_profile/edit_profile_view.dart';
+import 'package:harvest_app/features/user_settings/change_password/change_password_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -39,6 +40,7 @@ import 'package:harvest_app/features/user_settings/edit_profile/edit_profile_vie
     MaterialRoute(page: ReportDashboardView),
     MaterialRoute(page: UserSettingsView),
     MaterialRoute(page: EditProfileView),
+    MaterialRoute(page: ChangePasswordView),
 // @stacked-route
   ],
   dependencies: [
