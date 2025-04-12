@@ -18,6 +18,7 @@ import 'package:harvest_app/shared/bottom_sheets/edit_delete_farm/edit_delete_fa
 import 'package:harvest_app/features/dashboard/report_dashboard/report_dashboard_view.dart';
 import 'package:harvest_app/shared/filter_field_area/filter_field_area_sheet.dart';
 import 'package:harvest_app/shared/bottom_sheets/delete_farm/delete_farm_sheet.dart';
+import 'package:harvest_app/features/user_settings/user_settings_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -35,6 +36,7 @@ import 'package:harvest_app/shared/bottom_sheets/delete_farm/delete_farm_sheet.d
     MaterialRoute(page: HarvestReportView),
     MaterialRoute(page: CreateHarvestReportView),
     MaterialRoute(page: ReportDashboardView),
+    MaterialRoute(page: UserSettingsView),
 // @stacked-route
   ],
   dependencies: [

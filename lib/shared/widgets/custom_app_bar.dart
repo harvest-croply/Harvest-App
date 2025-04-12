@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:harvest_app/app/app.locator.dart';
+import 'package:harvest_app/app/app.router.dart';
 import 'package:harvest_app/assets/assets_icons.dart';
 import 'package:harvest_app/assets/assets_images.dart';
+import 'package:harvest_app/main.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -46,10 +48,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             ],
           ),
-          Image.asset(
-            AssetsImages.avatar,
-            width: 24,
-            height: 24,
+          GestureDetector(
+            onTap: () {
+              _navigationService.navigateToUserSettingsView();
+            },
+            child: Image.asset(
+              AssetsImages.avatar,
+              width: 24,
+              height: 24,
+            ),
           ),
         ],
       ),

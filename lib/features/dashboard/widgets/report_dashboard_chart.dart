@@ -56,12 +56,16 @@ class ReportDashboardChart extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 16),
-        Row(
-          children: [
-            dashboardLabel('Navel', CustomColors.primeGreen30),
-            dashboardLabel('Mandarin', CustomColors.primeOrange30),
-            dashboardLabel('Jewel', CustomColors.harvestBlue30),
-          ],
+        SizedBox(
+          height: 15,
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: datas[0].length,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (BuildContext context, int index) {
+              return dashboardLabel('Jewel', CustomColors.harvestBlue30);
+            },
+          ),
         ),
         const SizedBox(height: 16),
         dashboardChart(datas),
@@ -161,7 +165,7 @@ Widget barChartWidget(List data) {
                 children: [
                   Container(
                     width: 42,
-                    height: data[2] / 500 * 226,
+                    height: data[2] / 500 * 204,
                     decoration: BoxDecoration(
                       color: CustomColors.harvestBlue30,
                       borderRadius: BorderRadius.circular(8),
@@ -169,7 +173,7 @@ Widget barChartWidget(List data) {
                   ),
                   Container(
                     width: 42,
-                    height: data[1] / 500 * 226,
+                    height: data[1] / 500 * 204,
                     decoration: BoxDecoration(
                       color: CustomColors.primeGreen30,
                       borderRadius: BorderRadius.circular(8),
@@ -177,7 +181,7 @@ Widget barChartWidget(List data) {
                   ),
                   Container(
                     width: 42,
-                    height: data[0] / 500 * 226,
+                    height: data[0] / 500 * 204,
                     decoration: BoxDecoration(
                       color: CustomColors.primeOrange30,
                       borderRadius: BorderRadius.circular(8),
@@ -194,6 +198,9 @@ Widget barChartWidget(List data) {
 }
 
 Widget dashboardChart(List datas) {
+  // final sortedData = datas;
+  // sortedData.sort();
+
   return SizedBox(
     height: 250,
     child: Column(
@@ -256,9 +263,18 @@ Widget dashboardChart(List datas) {
                         DasshedLine(),
                       ],
                     ),
-                    Row(
+                    Column(
                       children: [
-                        for (var data in datas) barChartWidget(data),
+                        Expanded(
+                          child: Row(
+                            children: [
+                              for (var data in datas) barChartWidget(data),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        )
                       ],
                     )
                   ],
