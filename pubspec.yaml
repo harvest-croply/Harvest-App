@@ -60,6 +60,7 @@ harvest_assets: &harvest_assets
   - packages/harvest_app/assets/icons/logout.svg
   - packages/harvest_app/assets/icons/user.svg
   - packages/harvest_app/assets/icons/lock-closed.svg
+  - packages/harvest_app/assets/icons/eye.svg
 
 flutter:
   uses-material-design: true

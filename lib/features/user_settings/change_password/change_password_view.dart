@@ -27,10 +27,12 @@ class ChangePasswordView extends StackedView<ChangePasswordViewModel> {
             CustomTextField(
               text: "Password Baru",
               placeHolder: "Password Baru",
+              isPassword: true,
             ),
             CustomTextField(
               text: "Konfirmasi Password Baru",
               placeHolder: "Konfirmasi Password Baru",
+              isPassword: true,
             ),
           ],
         ),

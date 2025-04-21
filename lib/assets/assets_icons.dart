@@ -18,4 +18,5 @@ class AssetsIcons {
   static const logout = '$path/logout.svg';
   static const user = '$path/user.svg';
   static const lockClosed = '$path/lock-closed.svg';
+  static const eye = '$path/eye.svg';
 }
