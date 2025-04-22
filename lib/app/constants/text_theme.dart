@@ -18,6 +18,11 @@ class TextThemeConstants {
     fontWeight: FontWeight.w400,
   );
 
+  static TextStyle display4 = TextStyle(
+    color: CustomColors.neutral50,
+    fontSize: 24,
+    fontWeight: FontWeight.w700,
+  );
   static TextStyle display6 = TextStyle(
     color: CustomColors.neutral50,
     fontSize: 18,

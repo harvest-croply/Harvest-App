@@ -16,6 +16,7 @@ class CustomColors {
   static Color primeGreen10 = HexColor.fromHex('#CFEEE4');
   static Color primeGreen20 = HexColor.fromHex('#5EC7A4');
   static Color primeGreen30 = HexColor.fromHex('#0DAB76');
+  static Color primeGreen40 = HexColor.fromHex('#09724F');
   static Color rose30 = HexColor.fromHex('#FE0D0D');
   static Color slate100 = HexColor.fromHex('#F2F5F9');
   static Color slate200 = HexColor.fromHex('#E3E8EF');

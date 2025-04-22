@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:harvest_app/app/app.locator.dart';
-import 'package:harvest_app/app/app.router.dart';
+import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/features/auth/views/login/login_viewmodel.dart';
-import 'package:harvest_app/features/auth/views/login/widgets/forget_password.dart';
-import 'package:harvest_app/features/auth/views/login/widgets/login_footer.dart';
+import 'package:harvest_app/features/auth/views/login/widgets/login_form.dart';
 import 'package:harvest_app/features/auth/views/login/widgets/login_header.dart';
-import 'package:harvest_app/features/auth/views/register/widgets/google_register_button.dart';
-import 'package:harvest_app/features/auth/views/register/widgets/or_divider.dart';
-import 'package:harvest_app/shared/widgets/action_button.dart';
-import 'package:harvest_app/shared/widgets/auth_app_bar.dart';
-import 'package:harvest_app/shared/widgets/custom_text_field.dart';
 import 'package:stacked/stacked.dart';
-import 'package:stacked_services/stacked_services.dart';
 
 class LoginView extends StackedView<LoginViewModel> {
-  LoginView({Key? key}) : super(key: key);
-  final _navigationService = locator<NavigationService>();
+  const LoginView({Key? key}) : super(key: key);
 
   @override
   Widget builder(
@@ -24,37 +15,24 @@ class LoginView extends StackedView<LoginViewModel> {
     Widget? child,
   ) {
     return Scaffold(
+      backgroundColor: CustomColors.primeGreen10,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-            child: Column(
+        child: Stack(
+          children: [
+            const LoginHeader(),
+            Column(
               children: [
-                const AuthAppBar(),
-                const LoginHeader(),
-                const SizedBox(height: 16),
-                GoogleRegisterButton(),
-                const OrDivider(),
-                const SizedBox(height: 16),
-                const CustomTextField(
-                  text: 'Email',
-                  placeHolder: 'Masukan Email',
+                Expanded(
+                  flex: 2,
+                  child: Container(),
                 ),
-                const CustomTextField(
-                  text: 'Password',
-                  placeHolder: 'Masukan Password',
+                Expanded(
+                  flex: 5,
+                  child: LoginForm(),
                 ),
-                const ForgetPassword(),
-                ActionButton(
-                  text: "Login",
-                  onTap: () {
-                    _navigationService.navigateToDashboardView();
-                  },
-                ),
-                LoginFooter(),
               ],
             ),
-          ),
+          ],
         ),
       ),
     );

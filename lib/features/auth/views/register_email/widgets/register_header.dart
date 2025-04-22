@@ -15,14 +15,6 @@ class RegisterEmailHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return const Text(
-    //   "Register",
-    //   style: TextStyle(
-    //     fontSize: 20,
-    //     fontWeight: FontWeight.w700,
-    //   ),
-    // );
-
     return Container(
       padding: const EdgeInsets.all(16),
       child: Row(
@@ -35,9 +27,6 @@ class RegisterEmailHeader extends StatelessWidget {
               height: 24,
             ),
           ),
-          // Center(
-          //   child: Text("Register", style: CustomText),
-          // ),
           const SizedBox(
             width: 24,
           ),
