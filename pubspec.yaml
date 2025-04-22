@@ -36,6 +36,8 @@ harvest_assets: &harvest_assets
   - packages/harvest_app/assets/images/calender.png
   - packages/harvest_app/assets/images/gardening2.png
   - packages/harvest_app/assets/images/market.png
+  - packages/harvest_app/assets/images/onboarding-bg.png
+  - packages/harvest_app/assets/images/register-bg.png
   - packages/harvest_app/assets/images/report.png
   - packages/harvest_app/assets/images/schedule.png
   - packages/harvest_app/assets/images/farm_avatar.png

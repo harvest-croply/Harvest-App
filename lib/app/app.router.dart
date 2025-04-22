@@ -5,11 +5,12 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i18;
+import 'package:flutter/material.dart' as _i15;
 import 'package:flutter/material.dart';
-import 'package:harvest_app/features/auth/login/login_view.dart' as _i3;
-import 'package:harvest_app/features/auth/register/register_view.dart' as _i4;
-import 'package:harvest_app/features/auth/register_email/register_email_view.dart'
+import 'package:harvest_app/features/auth/views/login/login_view.dart' as _i3;
+import 'package:harvest_app/features/auth/views/register/register_view.dart'
+    as _i4;
+import 'package:harvest_app/features/auth/views/register_email/register_email_view.dart'
     as _i5;
 import 'package:harvest_app/features/create_farm/create_farm/confirm_location/confirm_location_view.dart'
     as _i8;
@@ -29,14 +30,10 @@ import 'package:harvest_app/features/harvest_report/create_harvest_report/create
 import 'package:harvest_app/features/harvest_report/harvest_report_list/harvest_report_view.dart'
     as _i12;
 import 'package:harvest_app/features/startup/startup_view.dart' as _i2;
-import 'package:harvest_app/features/user_settings/change_password/change_password_view.dart'
-    as _i17;
-import 'package:harvest_app/features/user_settings/edit_profile/edit_profile_view.dart'
-    as _i16;
-import 'package:harvest_app/features/user_settings/user_settings/user_settings_view.dart'
-    as _i15;
+import 'package:harvest_app/features/dashboard/report_dashboard/report_dashboard_view.dart'
+    as _i14;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i19;
+import 'package:stacked_services/stacked_services.dart' as _i16;
 
 class Routes {
   static const startupView = '/startup-view';
@@ -65,12 +62,6 @@ class Routes {
 
   static const reportDashboardView = '/report-dashboard-view';
 
-  static const userSettingsView = '/user-settings-view';
-
-  static const editProfileView = '/edit-profile-view';
-
-  static const changePasswordView = '/change-password-view';
-
   static const all = <String>{
     startupView,
     loginView,
@@ -85,9 +76,6 @@ class Routes {
     harvestReportView,
     createHarvestReportView,
     reportDashboardView,
-    userSettingsView,
-    editProfileView,
-    changePasswordView,
   };
 }
 
@@ -145,23 +133,11 @@ class StackedRouter extends _i1.RouterBase {
       Routes.reportDashboardView,
       page: _i14.ReportDashboardView,
     ),
-    _i1.RouteDef(
-      Routes.userSettingsView,
-      page: _i15.UserSettingsView,
-    ),
-    _i1.RouteDef(
-      Routes.editProfileView,
-      page: _i16.EditProfileView,
-    ),
-    _i1.RouteDef(
-      Routes.changePasswordView,
-      page: _i17.ChangePasswordView,
-    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.StartupView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.StartupView(),
         settings: data,
       );
@@ -170,37 +146,37 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<LoginViewArguments>(
         orElse: () => const LoginViewArguments(),
       );
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => _i3.LoginView(key: args.key),
         settings: data,
       );
     },
     _i4.RegisterView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.RegisterView(),
         settings: data,
       );
     },
     _i5.RegisterEmailView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.RegisterEmailView(),
         settings: data,
       );
     },
     _i6.CreateFarmView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.CreateFarmView(),
         settings: data,
       );
     },
     _i7.SearchFarmView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.SearchFarmView(),
         settings: data,
       );
     },
     _i8.ConfirmLocationView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.ConfirmLocationView(),
         settings: data,
       );
@@ -209,56 +185,38 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<DashboardViewArguments>(
         orElse: () => const DashboardViewArguments(),
       );
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => _i9.DashboardView(key: args.key),
         settings: data,
       );
     },
     _i10.FieldAreaLibraryView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.FieldAreaLibraryView(),
         settings: data,
       );
     },
     _i11.FieldAreaFormView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.FieldAreaFormView(),
         settings: data,
       );
     },
     _i12.HarvestReportView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.HarvestReportView(),
         settings: data,
       );
     },
     _i13.CreateHarvestReportView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.CreateHarvestReportView(),
         settings: data,
       );
     },
     _i14.ReportDashboardView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i14.ReportDashboardView(),
-        settings: data,
-      );
-    },
-    _i15.UserSettingsView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i15.UserSettingsView(),
-        settings: data,
-      );
-    },
-    _i16.EditProfileView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i16.EditProfileView(),
-        settings: data,
-      );
-    },
-    _i17.ChangePasswordView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i17.ChangePasswordView(),
         settings: data,
       );
     },
@@ -274,7 +232,7 @@ class StackedRouter extends _i1.RouterBase {
 class LoginViewArguments {
   const LoginViewArguments({this.key});
 
-  final _i18.Key? key;
+  final _i15.Key? key;
 
   @override
   String toString() {
@@ -296,7 +254,7 @@ class LoginViewArguments {
 class DashboardViewArguments {
   const DashboardViewArguments({this.key});
 
-  final _i18.Key? key;
+  final _i15.Key? key;
 
   @override
   String toString() {
@@ -315,7 +273,7 @@ class DashboardViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i19.NavigationService {
+extension NavigatorStateExtension on _i16.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -331,7 +289,7 @@ extension NavigatorStateExtension on _i19.NavigationService {
   }
 
   Future<dynamic> navigateToLoginView({
-    _i18.Key? key,
+    _i15.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -417,7 +375,7 @@ extension NavigatorStateExtension on _i19.NavigationService {
   }
 
   Future<dynamic> navigateToDashboardView({
-    _i18.Key? key,
+    _i15.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -502,48 +460,6 @@ extension NavigatorStateExtension on _i19.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToUserSettingsView([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return navigateTo<dynamic>(Routes.userSettingsView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
-  Future<dynamic> navigateToEditProfileView([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return navigateTo<dynamic>(Routes.editProfileView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
-  Future<dynamic> navigateToChangePasswordView([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return navigateTo<dynamic>(Routes.changePasswordView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
   Future<dynamic> replaceWithStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -559,7 +475,7 @@ extension NavigatorStateExtension on _i19.NavigationService {
   }
 
   Future<dynamic> replaceWithLoginView({
-    _i18.Key? key,
+    _i15.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -645,7 +561,7 @@ extension NavigatorStateExtension on _i19.NavigationService {
   }
 
   Future<dynamic> replaceWithDashboardView({
-    _i18.Key? key,
+    _i15.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -724,48 +640,6 @@ extension NavigatorStateExtension on _i19.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.reportDashboardView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
-  Future<dynamic> replaceWithUserSettingsView([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return replaceWith<dynamic>(Routes.userSettingsView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
-  Future<dynamic> replaceWithEditProfileView([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return replaceWith<dynamic>(Routes.editProfileView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
-  Future<dynamic> replaceWithChangePasswordView([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return replaceWith<dynamic>(Routes.changePasswordView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

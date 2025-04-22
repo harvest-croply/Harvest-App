@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:harvest_app/features/auth/register/widgets/google_register_button.dart';
-import 'package:harvest_app/features/auth/register/widgets/register_header.dart';
-import 'package:harvest_app/features/auth/register/widgets/or_divider.dart';
+import 'package:harvest_app/features/auth/views/register/widgets/google_register_button.dart';
+import 'package:harvest_app/features/auth/views/register/widgets/register_header.dart';
+import 'package:harvest_app/features/auth/views/register/widgets/or_divider.dart';
 import 'package:harvest_app/shared/widgets/auth_app_bar.dart';
 import 'package:harvest_app/shared/widgets/auth_footer.dart';
 import 'package:harvest_app/shared/widgets/action_button.dart';

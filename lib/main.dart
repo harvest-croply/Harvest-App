@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: Routes.dashboardView,
+      initialRoute: Routes.onboardingView,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [StackedService.routeObserver],
