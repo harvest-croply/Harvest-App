@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:harvest_app/app/app.bottomsheets.dart';
 import 'package:harvest_app/app/app.locator.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/assets/assets_icons.dart';
@@ -19,6 +20,7 @@ class EditDeleteFarmSheet extends StackedView<EditDeleteFarmSheetModel> {
   }) : super(key: key);
 
   final _navigationService = locator<NavigationService>();
+  final _bottomSheetService = locator<BottomSheetService>();
 
   @override
   Widget builder(
@@ -88,26 +90,38 @@ class EditDeleteFarmSheet extends StackedView<EditDeleteFarmSheetModel> {
             ],
           ),
           const SizedBox(height: 36),
-          Row(
-            children: [
-              SvgPicture.asset(
-                AssetsIcons.delete,
-                width: 21,
-                height: 21,
-              ),
-              const SizedBox(width: 8),
-              Text(
-                'Delete',
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: CustomColors.rose30,
-                      fontWeight: FontWeight.w700,
-                    ),
-              ),
-            ],
+          GestureDetector(
+            onTap: () {
+              openDeleteFarmBottomSheet();
+            },
+            child: Row(
+              children: [
+                SvgPicture.asset(
+                  AssetsIcons.delete,
+                  width: 21,
+                  height: 21,
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  'Delete',
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: CustomColors.rose30,
+                        fontWeight: FontWeight.w700,
+                      ),
+                ),
+              ],
+            ),
           ),
           const SizedBox(height: 16),
         ],
       ),
+    );
+  }
+
+  openDeleteFarmBottomSheet() {
+    _navigationService.back();
+    _bottomSheetService.showCustomSheet(
+      variant: BottomSheetType.deleteFarm,
     );
   }
 

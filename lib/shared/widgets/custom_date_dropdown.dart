@@ -3,8 +3,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/assets/assets_icons.dart';
 
-class CustomDatePicker extends StatelessWidget {
-  const CustomDatePicker({super.key});
+class CustomDropdown extends StatelessWidget {
+  final String text;
+  const CustomDropdown({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +20,8 @@ class CustomDatePicker extends StatelessWidget {
         children: [
           Row(
             children: [
-              SvgPicture.asset(
-                AssetsIcons.calendar,
-                width: 20,
-                height: 20,
-              ),
-              const SizedBox(width: 8),
               Text(
-                "Filter berdasarkan tanggal",
+                text,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: CustomColors.neutral30,
                     ),

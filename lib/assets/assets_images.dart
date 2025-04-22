@@ -17,4 +17,7 @@ class AssetsImages {
   static const report = '$path/report.png';
   static const schedule = '$path/schedule.png';
   static const farmAvatar = '$path/farm_avatar.png';
+  static const datePickerRafiki = '$path/date_picker_rafiki.png';
+  static const inboxCleanup = '$path/inbox_cleanup_rafiki.png';
+  static const photo = '$path/photo.png';
 }

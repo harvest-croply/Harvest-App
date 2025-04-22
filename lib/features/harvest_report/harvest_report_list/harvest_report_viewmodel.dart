@@ -6,7 +6,7 @@ import 'package:stacked_services/stacked_services.dart';
 class HarvestReportViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
-  List reportList = [];
+  List reportList = [0];
 
   createHarvestReport() {
     _navigationService.navigateToCreateHarvestReportView();
