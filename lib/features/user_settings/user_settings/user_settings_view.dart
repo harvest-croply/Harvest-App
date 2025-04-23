@@ -4,7 +4,7 @@ import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/app/constants/text_theme.dart';
 import 'package:harvest_app/assets/assets_icons.dart';
 import 'package:harvest_app/assets/assets_images.dart';
-import 'package:harvest_app/shared/widgets/secondary_action_button.dart';
+import 'package:harvest_app/shared/widgets/log_out_action_button.dart';
 import 'package:stacked/stacked.dart';
 
 import 'user_settings_viewmodel.dart';
@@ -33,7 +33,7 @@ class UserSettingsView extends StackedView<UserSettingsViewModel> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        child: SecondaryActionButton(
+        child: LogoutActionButton(
           text: "Keluar",
           onTap: () {},
         ),

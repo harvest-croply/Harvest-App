@@ -22,6 +22,8 @@ import 'package:harvest_app/shared/bottom_sheets/delete_farm/delete_farm_sheet.d
 import 'package:harvest_app/features/user_settings/user_settings/user_settings_view.dart';
 import 'package:harvest_app/features/user_settings/edit_profile/edit_profile_view.dart';
 import 'package:harvest_app/features/user_settings/change_password/change_password_view.dart';
+import 'package:harvest_app/features/auth/views/forget_password/forget_password_view.dart';
+import 'package:harvest_app/features/auth/views/reset_password/reset_password_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -43,6 +45,8 @@ import 'package:harvest_app/features/user_settings/change_password/change_passwo
     MaterialRoute(page: UserSettingsView),
     MaterialRoute(page: EditProfileView),
     MaterialRoute(page: ChangePasswordView),
+    MaterialRoute(page: ForgetPasswordView),
+    MaterialRoute(page: ResetPasswordView),
 // @stacked-route
   ],
   dependencies: [

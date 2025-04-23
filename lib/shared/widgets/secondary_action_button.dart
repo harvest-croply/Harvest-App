@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
-import 'package:harvest_app/assets/assets_icons.dart';
 
 class SecondaryActionButton extends StatelessWidget {
   final String text;
@@ -18,22 +16,20 @@ class SecondaryActionButton extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
-          border: Border.all(color: CustomColors.rose30),
+          border: Border.all(
+            color: CustomColors.primeGreen30,
+            width: 1.5,
+          ),
           borderRadius: BorderRadius.circular(8),
         ),
         height: 44,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(AssetsIcons.logout),
-            const SizedBox(width: 8),
-            Text(
-              text,
-              style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                    color: CustomColors.rose30,
-                  ),
-            ),
-          ],
+        child: Center(
+          child: Text(
+            text,
+            style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                  color: CustomColors.primeGreen30,
+                ),
+          ),
         ),
       ),
     );

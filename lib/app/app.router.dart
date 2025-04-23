@@ -5,8 +5,10 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i19;
+import 'package:flutter/material.dart' as _i21;
 import 'package:flutter/material.dart';
+import 'package:harvest_app/features/auth/views/forget_password/forget_password_view.dart'
+    as _i19;
 import 'package:harvest_app/features/auth/views/login/login_view.dart' as _i3;
 import 'package:harvest_app/features/auth/views/onboarding/onboarding_view.dart'
     as _i15;
@@ -38,8 +40,10 @@ import 'package:harvest_app/features/user_settings/edit_profile/edit_profile_vie
     as _i17;
 import 'package:harvest_app/features/user_settings/user_settings/user_settings_view.dart'
     as _i16;
+import 'package:harvest_app/features/auth/views/reset_password/reset_password_view.dart'
+    as _i20;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i20;
+import 'package:stacked_services/stacked_services.dart' as _i22;
 
 class Routes {
   static const startupView = '/startup-view';
@@ -76,6 +80,10 @@ class Routes {
 
   static const changePasswordView = '/change-password-view';
 
+  static const forgetPasswordView = '/forget-password-view';
+
+  static const resetPasswordView = '/reset-password-view';
+
   static const all = <String>{
     startupView,
     loginView,
@@ -94,6 +102,8 @@ class Routes {
     userSettingsView,
     editProfileView,
     changePasswordView,
+    forgetPasswordView,
+    resetPasswordView,
   };
 }
 
@@ -167,50 +177,55 @@ class StackedRouter extends _i1.RouterBase {
       Routes.changePasswordView,
       page: _i18.ChangePasswordView,
     ),
+    _i1.RouteDef(
+      Routes.forgetPasswordView,
+      page: _i19.ForgetPasswordView,
+    ),
+    _i1.RouteDef(
+      Routes.resetPasswordView,
+      page: _i20.ResetPasswordView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.StartupView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.StartupView(),
         settings: data,
       );
     },
     _i3.LoginView: (data) {
-      final args = data.getArgs<LoginViewArguments>(
-        orElse: () => const LoginViewArguments(),
-      );
-      return _i19.MaterialPageRoute<dynamic>(
-        builder: (context) => _i3.LoginView(key: args.key),
+      return _i21.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i3.LoginView(),
         settings: data,
       );
     },
     _i4.RegisterView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.RegisterView(),
         settings: data,
       );
     },
     _i5.RegisterEmailView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.RegisterEmailView(),
         settings: data,
       );
     },
     _i6.CreateFarmView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.CreateFarmView(),
         settings: data,
       );
     },
     _i7.SearchFarmView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.SearchFarmView(),
         settings: data,
       );
     },
     _i8.ConfirmLocationView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.ConfirmLocationView(),
         settings: data,
       );
@@ -219,37 +234,37 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<DashboardViewArguments>(
         orElse: () => const DashboardViewArguments(),
       );
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => _i9.DashboardView(key: args.key),
         settings: data,
       );
     },
     _i10.FieldAreaLibraryView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.FieldAreaLibraryView(),
         settings: data,
       );
     },
     _i11.FieldAreaFormView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.FieldAreaFormView(),
         settings: data,
       );
     },
     _i12.HarvestReportView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.HarvestReportView(),
         settings: data,
       );
     },
     _i13.CreateHarvestReportView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.CreateHarvestReportView(),
         settings: data,
       );
     },
     _i14.ReportDashboardView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i14.ReportDashboardView(),
         settings: data,
       );
@@ -258,26 +273,38 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<OnboardingViewArguments>(
         orElse: () => const OnboardingViewArguments(),
       );
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => _i15.OnboardingView(key: args.key),
         settings: data,
       );
     },
     _i16.UserSettingsView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i16.UserSettingsView(),
         settings: data,
       );
     },
     _i17.EditProfileView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i17.EditProfileView(),
         settings: data,
       );
     },
     _i18.ChangePasswordView: (data) {
-      return _i19.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i18.ChangePasswordView(),
+        settings: data,
+      );
+    },
+    _i19.ForgetPasswordView: (data) {
+      return _i21.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i19.ForgetPasswordView(),
+        settings: data,
+      );
+    },
+    _i20.ResetPasswordView: (data) {
+      return _i21.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i20.ResetPasswordView(),
         settings: data,
       );
     },
@@ -290,32 +317,10 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-class LoginViewArguments {
-  const LoginViewArguments({this.key});
-
-  final _i19.Key? key;
-
-  @override
-  String toString() {
-    return '{"key": "$key"}';
-  }
-
-  @override
-  bool operator ==(covariant LoginViewArguments other) {
-    if (identical(this, other)) return true;
-    return other.key == key;
-  }
-
-  @override
-  int get hashCode {
-    return key.hashCode;
-  }
-}
-
 class DashboardViewArguments {
   const DashboardViewArguments({this.key});
 
-  final _i19.Key? key;
+  final _i21.Key? key;
 
   @override
   String toString() {
@@ -337,7 +342,7 @@ class DashboardViewArguments {
 class OnboardingViewArguments {
   const OnboardingViewArguments({this.key});
 
-  final _i19.Key? key;
+  final _i21.Key? key;
 
   @override
   String toString() {
@@ -356,7 +361,7 @@ class OnboardingViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i20.NavigationService {
+extension NavigatorStateExtension on _i22.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -371,16 +376,14 @@ extension NavigatorStateExtension on _i20.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToLoginView({
-    _i19.Key? key,
+  Future<dynamic> navigateToLoginView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  }) async {
+  ]) async {
     return navigateTo<dynamic>(Routes.loginView,
-        arguments: LoginViewArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -458,7 +461,7 @@ extension NavigatorStateExtension on _i20.NavigationService {
   }
 
   Future<dynamic> navigateToDashboardView({
-    _i19.Key? key,
+    _i21.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -544,7 +547,7 @@ extension NavigatorStateExtension on _i20.NavigationService {
   }
 
   Future<dynamic> navigateToOnboardingView({
-    _i19.Key? key,
+    _i21.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -601,6 +604,34 @@ extension NavigatorStateExtension on _i20.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToForgetPasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.forgetPasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToResetPasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.resetPasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -615,16 +646,14 @@ extension NavigatorStateExtension on _i20.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithLoginView({
-    _i19.Key? key,
+  Future<dynamic> replaceWithLoginView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  }) async {
+  ]) async {
     return replaceWith<dynamic>(Routes.loginView,
-        arguments: LoginViewArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -702,7 +731,7 @@ extension NavigatorStateExtension on _i20.NavigationService {
   }
 
   Future<dynamic> replaceWithDashboardView({
-    _i19.Key? key,
+    _i21.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -788,7 +817,7 @@ extension NavigatorStateExtension on _i20.NavigationService {
   }
 
   Future<dynamic> replaceWithOnboardingView({
-    _i19.Key? key,
+    _i21.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -839,6 +868,34 @@ extension NavigatorStateExtension on _i20.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.changePasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithForgetPasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.forgetPasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithResetPasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.resetPasswordView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
