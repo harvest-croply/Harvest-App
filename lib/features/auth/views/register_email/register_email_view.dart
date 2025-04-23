@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
+import 'package:harvest_app/features/auth/views/register_email/widgets/register_form.dart';
 import 'package:harvest_app/features/auth/views/register_email/widgets/register_header.dart';
 import 'package:harvest_app/shared/widgets/auth_footer.dart';
 import 'package:harvest_app/shared/widgets/form_card.dart';
@@ -25,17 +26,24 @@ class RegisterEmailView extends StackedView<RegisterEmailViewModel> {
             Image.asset(
               "packages/harvest_app/assets/images/register-bg.png",
             ),
-            Positioned(
-              top: MediaQuery.of(context).size.width / 2,
-              child: Expanded(
-                child: FormCard(
-                  child: Column(
-                    children: [
-                      AuthFooter(),
-                    ],
+            Column(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Container(),
+                ),
+                Expanded(
+                  flex: 5,
+                  child: FormCard(
+                    child: Column(
+                      children: [
+                        const RegisterForm(),
+                        AuthFooter(),
+                      ],
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
           ],
         ),

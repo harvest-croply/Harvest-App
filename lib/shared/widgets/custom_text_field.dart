@@ -76,16 +76,17 @@ class CustomTextField extends StatelessWidget {
                     ),
               ),
             ),
-            Positioned(
-              right: 16,
-              top: 12,
-              child: GestureDetector(
-                onTap: () {},
-                child: SvgPicture.asset(
-                  AssetsIcons.eye,
+            if (isPassword == true)
+              Positioned(
+                right: 16,
+                top: 12,
+                child: GestureDetector(
+                  onTap: () {},
+                  child: SvgPicture.asset(
+                    AssetsIcons.eye,
+                  ),
                 ),
               ),
-            ),
           ],
         ),
         if (note != null)

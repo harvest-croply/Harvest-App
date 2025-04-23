@@ -15,7 +15,9 @@ class AuthFooter extends StatelessWidget {
       children: [
         Text(
           "Sudah pernah daftar?",
-          style: Theme.of(context).textTheme.bodySmall,
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: CustomColors.neutral40,
+              ),
         ),
         const SizedBox(height: 4),
         GestureDetector(
