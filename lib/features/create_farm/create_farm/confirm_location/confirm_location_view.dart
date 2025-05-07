@@ -14,11 +14,11 @@ class ConfirmLocationView extends StackedView<ConfirmLocationViewModel> {
     ConfirmLocationViewModel viewModel,
     Widget? child,
   ) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            MapBackground(),
+            const MapBackground(),
             ConfirmLocationBottomWidget(),
           ],
         ),

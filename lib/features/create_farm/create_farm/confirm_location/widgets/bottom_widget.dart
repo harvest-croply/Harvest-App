@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:harvest_app/app/app.locator.dart';
+import 'package:harvest_app/app/app.router.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
 import 'package:harvest_app/assets/assets_icons.dart';
 import 'package:harvest_app/shared/widgets/action_button.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class ConfirmLocationBottomWidget extends StatelessWidget {
-  const ConfirmLocationBottomWidget({super.key});
+  ConfirmLocationBottomWidget({super.key});
+
+  final navigationService = locator<NavigationService>();
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +24,15 @@ class ConfirmLocationBottomWidget extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SvgPicture.asset(
-                    AssetsIcons.arrowLeft,
-                    width: 24,
-                    height: 24,
+                  GestureDetector(
+                    onTap: () {
+                      navigationService.back();
+                    },
+                    child: SvgPicture.asset(
+                      AssetsIcons.arrowLeft,
+                      width: 24,
+                      height: 24,
+                    ),
                   ),
                   const SizedBox(width: 16),
                   Text(
@@ -34,31 +44,36 @@ class ConfirmLocationBottomWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(
-                    color: CustomColors.primeGreen30,
-                    width: 1.5,
+              GestureDetector(
+                onTap: () {
+                  navigationService.navigateToSearchFarmView();
+                },
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: CustomColors.primeGreen30,
+                      width: 1.5,
+                    ),
                   ),
-                ),
-                child: Row(
-                  children: [
-                    SvgPicture.asset(
-                      AssetsIcons.search,
-                      width: 12,
-                      height: 12,
-                    ),
-                    const SizedBox(width: 4),
-                    Text(
-                      "Cari",
-                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: CustomColors.primeGreen30,
-                          ),
-                    ),
-                  ],
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        AssetsIcons.search,
+                        width: 12,
+                        height: 12,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(
+                        "Cari",
+                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                              color: CustomColors.primeGreen30,
+                            ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -100,7 +115,11 @@ class ConfirmLocationBottomWidget extends StatelessWidget {
               ],
             ),
           ),
-          ActionButton(text: "Konfirmasi", onTap: () {}),
+          ActionButton(
+              text: "Konfirmasi",
+              onTap: () {
+                navigationService.navigateToCreateFarmView();
+              }),
         ],
       ),
     );

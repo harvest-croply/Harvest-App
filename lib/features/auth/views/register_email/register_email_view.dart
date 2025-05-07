@@ -37,7 +37,7 @@ class RegisterEmailView extends StackedView<RegisterEmailViewModel> {
                   child: FormCard(
                     child: Column(
                       children: [
-                        const RegisterForm(),
+                        RegisterForm(),
                         AuthFooter(),
                       ],
                     ),

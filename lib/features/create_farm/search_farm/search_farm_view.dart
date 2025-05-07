@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:harvest_app/app/app.locator.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
+import 'package:harvest_app/assets/assets_icons.dart';
 import 'package:harvest_app/features/create_farm/search_farm/widgets/search_area_card.dart';
 import 'package:harvest_app/shared/widgets/custom_search_bar.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 import 'search_farm_viewmodel.dart';
 
 class SearchFarmView extends StackedView<SearchFarmViewModel> {
-  const SearchFarmView({Key? key}) : super(key: key);
+  SearchFarmView({Key? key}) : super(key: key);
+
+  final navigationService = locator<NavigationService>();
 
   @override
   Widget builder(
@@ -22,7 +28,18 @@ class SearchFarmView extends StackedView<SearchFarmViewModel> {
         backgroundColor: Colors.white,
         shadowColor: Colors.white,
         elevation: 1,
-        leadingWidth: 28,
+        leadingWidth: 48,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 24),
+          child: GestureDetector(
+            onTap: () {
+              navigationService.back();
+            },
+            child: SvgPicture.asset(
+              AssetsIcons.arrowLeft,
+            ),
+          ),
+        ),
         iconTheme: IconThemeData(color: CustomColors.neutral40),
         title: const CustomSearchBar(),
       ),

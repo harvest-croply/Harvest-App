@@ -220,7 +220,7 @@ class StackedRouter extends _i1.RouterBase {
     },
     _i7.SearchFarmView: (data) {
       return _i21.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i7.SearchFarmView(),
+        builder: (context) => _i7.SearchFarmView(),
         settings: data,
       );
     },
