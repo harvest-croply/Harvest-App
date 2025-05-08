@@ -19,4 +19,5 @@ class AssetsIcons {
   static const user = '$path/user.svg';
   static const lockClosed = '$path/lock-closed.svg';
   static const eye = '$path/eye.svg';
+  static const whiteCheckList = '$path/white_checklist.svg';
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
-import 'package:harvest_app/features/auth/views/register_email/widgets/register_form.dart';
-import 'package:harvest_app/features/auth/views/register_email/widgets/register_header.dart';
+import 'package:harvest_app/features/auth/register_email/widgets/register_form.dart';
+import 'package:harvest_app/features/auth/register_email/widgets/register_header.dart';
 import 'package:harvest_app/shared/widgets/auth_footer.dart';
 import 'package:harvest_app/shared/widgets/form_card.dart';
 import 'package:stacked/stacked.dart';

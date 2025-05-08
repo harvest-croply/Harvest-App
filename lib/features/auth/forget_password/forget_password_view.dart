@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:harvest_app/app/constants/text_theme.dart';
-import 'package:harvest_app/features/auth/views/register/widgets/or_divider.dart';
+import 'package:harvest_app/features/auth/register/widgets/or_divider.dart';
 import 'package:harvest_app/shared/widgets/action_button.dart';
 import 'package:harvest_app/shared/widgets/custom_text_field.dart';
 import 'package:harvest_app/shared/widgets/secondary_action_button.dart';

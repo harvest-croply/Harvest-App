@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:harvest_app/app/constants/custom_colors.dart';
-import 'package:harvest_app/features/auth/views/login/login_viewmodel.dart';
-import 'package:harvest_app/features/auth/views/login/widgets/login_form.dart';
-import 'package:harvest_app/features/auth/views/login/widgets/login_header.dart';
+import 'package:harvest_app/features/auth/login/login_viewmodel.dart';
+import 'package:harvest_app/features/auth/login/widgets/login_form.dart';
+import 'package:harvest_app/features/auth/login/widgets/login_header.dart';
 import 'package:stacked/stacked.dart';
 
 class LoginView extends StackedView<LoginViewModel> {
@@ -26,7 +26,7 @@ class LoginView extends StackedView<LoginViewModel> {
                   flex: 2,
                   child: Container(),
                 ),
-                Expanded(
+                const Expanded(
                   flex: 5,
                   child: LoginForm(),
                 ),

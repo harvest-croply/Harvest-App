@@ -7,15 +7,16 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart' as _i21;
 import 'package:flutter/material.dart';
-import 'package:harvest_app/features/auth/views/forget_password/forget_password_view.dart'
+import 'package:harvest_app/features/auth/forget_password/forget_password_view.dart'
     as _i19;
-import 'package:harvest_app/features/auth/views/login/login_view.dart' as _i3;
-import 'package:harvest_app/features/auth/views/onboarding/onboarding_view.dart'
+import 'package:harvest_app/features/auth/login/login_view.dart' as _i3;
+import 'package:harvest_app/features/auth/onboarding/onboarding_view.dart'
     as _i15;
-import 'package:harvest_app/features/auth/views/register/register_view.dart'
-    as _i4;
-import 'package:harvest_app/features/auth/views/register_email/register_email_view.dart'
+import 'package:harvest_app/features/auth/register/register_view.dart' as _i4;
+import 'package:harvest_app/features/auth/register_email/register_email_view.dart'
     as _i5;
+import 'package:harvest_app/features/auth/reset_password/reset_password_view.dart'
+    as _i20;
 import 'package:harvest_app/features/create_farm/create_farm/confirm_location/confirm_location_view.dart'
     as _i8;
 import 'package:harvest_app/features/create_farm/create_farm/create_farm_view.dart'
@@ -40,8 +41,6 @@ import 'package:harvest_app/features/user_settings/edit_profile/edit_profile_vie
     as _i17;
 import 'package:harvest_app/features/user_settings/user_settings/user_settings_view.dart'
     as _i16;
-import 'package:harvest_app/features/auth/views/reset_password/reset_password_view.dart'
-    as _i20;
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i22;
 
@@ -219,8 +218,11 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i7.SearchFarmView: (data) {
+      final args = data.getArgs<SearchFarmViewArguments>(
+        orElse: () => const SearchFarmViewArguments(),
+      );
       return _i21.MaterialPageRoute<dynamic>(
-        builder: (context) => _i7.SearchFarmView(),
+        builder: (context) => _i7.SearchFarmView(key: args.key),
         settings: data,
       );
     },
@@ -315,6 +317,28 @@ class StackedRouter extends _i1.RouterBase {
 
   @override
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
+}
+
+class SearchFarmViewArguments {
+  const SearchFarmViewArguments({this.key});
+
+  final _i21.Key? key;
+
+  @override
+  String toString() {
+    return '{"key": "$key"}';
+  }
+
+  @override
+  bool operator ==(covariant SearchFarmViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode;
+  }
 }
 
 class DashboardViewArguments {
@@ -432,14 +456,16 @@ extension NavigatorStateExtension on _i22.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToSearchFarmView([
+  Future<dynamic> navigateToSearchFarmView({
+    _i21.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.searchFarmView,
+        arguments: SearchFarmViewArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -702,14 +728,16 @@ extension NavigatorStateExtension on _i22.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithSearchFarmView([
+  Future<dynamic> replaceWithSearchFarmView({
+    _i21.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.searchFarmView,
+        arguments: SearchFarmViewArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

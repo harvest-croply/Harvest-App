@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:harvest_app/app/app.locator.dart';
-import 'package:harvest_app/app/app.router.dart';
-import 'package:harvest_app/features/auth/views/login/widgets/forget_password.dart';
-import 'package:harvest_app/features/auth/views/login/widgets/login_footer.dart';
-import 'package:harvest_app/features/auth/views/register/widgets/google_register_button.dart';
-import 'package:harvest_app/features/auth/views/register/widgets/or_divider.dart';
+import 'package:harvest_app/features/auth/login/login_viewmodel.dart';
+import 'package:harvest_app/features/auth/login/widgets/forget_password.dart';
+import 'package:harvest_app/features/auth/login/widgets/login_footer.dart';
+import 'package:harvest_app/features/auth/register/widgets/google_register_button.dart';
+import 'package:harvest_app/features/auth/register/widgets/or_divider.dart';
 import 'package:harvest_app/shared/widgets/action_button.dart';
 import 'package:harvest_app/shared/widgets/custom_text_field.dart';
-import 'package:stacked_services/stacked_services.dart';
+import 'package:stacked_hooks/stacked_hooks.dart';
 
-class LoginForm extends StatelessWidget {
-  LoginForm({super.key});
-
-  final _navigationService = locator<NavigationService>();
+class LoginForm extends StackedHookView<LoginViewModel> {
+  const LoginForm({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget builder(BuildContext context, LoginViewModel model) {
     return Container(
       height: 506,
       color: Colors.white,
@@ -26,11 +23,13 @@ class LoginForm extends StatelessWidget {
           GoogleRegisterButton(),
           const OrDivider(),
           const SizedBox(height: 16),
-          const CustomTextField(
+          CustomTextField(
+            controller: model.emailController,
             text: 'Email',
             placeHolder: 'Masukan Email',
           ),
-          const CustomTextField(
+          CustomTextField(
+            controller: model.passwordController,
             text: 'Password',
             placeHolder: 'Masukan Password',
           ),
@@ -38,7 +37,7 @@ class LoginForm extends StatelessWidget {
           ActionButton(
             text: "Login",
             onTap: () {
-              _navigationService.navigateToDashboardView();
+              model.login(context);
             },
           ),
           LoginFooter(),

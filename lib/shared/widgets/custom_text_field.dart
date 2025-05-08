@@ -8,6 +8,7 @@ class CustomTextField extends StatelessWidget {
   final String placeHolder;
   final String? note;
   final bool? isPassword;
+  final TextEditingController? controller;
 
   const CustomTextField({
     super.key,
@@ -15,6 +16,7 @@ class CustomTextField extends StatelessWidget {
     required this.placeHolder,
     this.note,
     this.isPassword,
+    this.controller,
   });
 
   @override
@@ -36,6 +38,7 @@ class CustomTextField extends StatelessWidget {
             SizedBox(
               height: 44,
               child: TextField(
+                controller: controller,
                 obscureText: isPassword ?? false,
                 obscuringCharacter: "*",
                 textAlignVertical: TextAlignVertical.center,
